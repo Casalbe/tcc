@@ -1,0 +1,16 @@
+id,source,length,code_ref_density,has_suggestion,recommendation_score,politeness_score,semantic_similarity
+vllm-project/vllm#32790#2729639967,human,32,0.208,False,0,2,0.1
+vllm-project/vllm#32790#2729639967,chatgpt,221,0.135,True,4,2,0.162
+vllm-project/vllm#32790#2729639967,claude,176,0.115,True,6,2,0.159
+TheDarkchip/shap-it-like-its-hot#56#2754573033,human,5,0.0,False,0,0,0.0
+TheDarkchip/shap-it-like-its-hot#56#2754573033,chatgpt,180,0.136,True,6,1,0.108
+TheDarkchip/shap-it-like-its-hot#56#2754573033,claude,207,0.145,True,3,0,0.113
+tobymao/sqlglot#6918#2754480293,human,16,0.133,False,0,1,0.029
+tobymao/sqlglot#6918#2754480293,chatgpt,172,0.08,True,1,1,0.168
+tobymao/sqlglot#6918#2754480293,claude,218,0.027,True,4,0,0.034
+PostHog/posthog#46328#2746468514,human,31,0.0,False,0,0,0.045
+PostHog/posthog#46328#2746468514,chatgpt,128,0.064,True,5,1,0.076
+PostHog/posthog#46328#2746468514,claude,232,0.033,True,6,0,0.085
+probabl-ai/skore#2333#2754367761,human,8,0.5,True,0,0,0.099
+probabl-ai/skore#2333#2754367761,chatgpt,173,0.174,True,3,2,0.133
+probabl-ai/skore#2333#2754367761,claude,179,0.153,True,3,1,0.078

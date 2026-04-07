@@ -1,0 +1,254 @@
+[
+  {
+    "id": "vllm-project/vllm#32790#2729639967",
+    "metadata": {
+      "repo": "vllm-project/vllm",
+      "pull_request": 32790,
+      "commit": "5e6896a68e7632ab338406932dfcea8de8acfe53",
+      "file": "vllm/model_executor/layers/fused_moe/layer.py",
+      "start_line": 1568,
+      "end_line": 1598
+    },
+    "evaluations": {
+      "human": {
+        "id": "vllm-project/vllm#32790#2729639967",
+        "length": 32,
+        "code_ref_density": 0.208,
+        "has_suggestion": false,
+        "recommendation_score": 0,
+        "issue_types": [
+          "readability",
+          "style"
+        ],
+        "politeness_score": 2,
+        "semantic_similarity": 0.1
+      },
+      "chatgpt": {
+        "id": "vllm-project/vllm#32790#2729639967",
+        "length": 221,
+        "code_ref_density": 0.135,
+        "has_suggestion": true,
+        "recommendation_score": 4,
+        "issue_types": [
+          "readability",
+          "style"
+        ],
+        "politeness_score": 2,
+        "semantic_similarity": 0.162
+      },
+      "claude": {
+        "id": "vllm-project/vllm#32790#2729639967",
+        "length": 176,
+        "code_ref_density": 0.115,
+        "has_suggestion": true,
+        "recommendation_score": 6,
+        "issue_types": [
+          "readability",
+          "style",
+          "testing"
+        ],
+        "politeness_score": 2,
+        "semantic_similarity": 0.159
+      }
+    }
+  },
+  {
+    "id": "TheDarkchip/shap-it-like-its-hot#56#2754573033",
+    "metadata": {
+      "repo": "TheDarkchip/shap-it-like-its-hot",
+      "pull_request": 56,
+      "commit": "94c12859b90223c81e5435459b85ad2fd8b6fc23",
+      "file": "scripts/generate_mvs_report.py",
+      "start_line": 241,
+      "end_line": 271
+    },
+    "evaluations": {
+      "human": {
+        "id": "TheDarkchip/shap-it-like-its-hot#56#2754573033",
+        "length": 5,
+        "code_ref_density": 0.0,
+        "has_suggestion": false,
+        "recommendation_score": 0,
+        "issue_types": [
+          "bug"
+        ],
+        "politeness_score": 0,
+        "semantic_similarity": 0.0
+      },
+      "chatgpt": {
+        "id": "TheDarkchip/shap-it-like-its-hot#56#2754573033",
+        "length": 180,
+        "code_ref_density": 0.136,
+        "has_suggestion": true,
+        "recommendation_score": 6,
+        "issue_types": [
+          "bug",
+          "readability",
+          "style"
+        ],
+        "politeness_score": 1,
+        "semantic_similarity": 0.108
+      },
+      "claude": {
+        "id": "TheDarkchip/shap-it-like-its-hot#56#2754573033",
+        "length": 207,
+        "code_ref_density": 0.145,
+        "has_suggestion": true,
+        "recommendation_score": 3,
+        "issue_types": [
+          "bug"
+        ],
+        "politeness_score": 0,
+        "semantic_similarity": 0.113
+      }
+    }
+  },
+  {
+    "id": "tobymao/sqlglot#6918#2754480293",
+    "metadata": {
+      "repo": "tobymao/sqlglot",
+      "pull_request": 6918,
+      "commit": "20ad15d01368aac02d3147b5b159ae890efda836",
+      "file": "sqlglot/typing/__init__.py",
+      "start_line": 170,
+      "end_line": 200
+    },
+    "evaluations": {
+      "human": {
+        "id": "tobymao/sqlglot#6918#2754480293",
+        "length": 16,
+        "code_ref_density": 0.133,
+        "has_suggestion": false,
+        "recommendation_score": 0,
+        "issue_types": [],
+        "politeness_score": 1,
+        "semantic_similarity": 0.029
+      },
+      "chatgpt": {
+        "id": "tobymao/sqlglot#6918#2754480293",
+        "length": 172,
+        "code_ref_density": 0.08,
+        "has_suggestion": true,
+        "recommendation_score": 1,
+        "issue_types": [
+          "readability"
+        ],
+        "politeness_score": 1,
+        "semantic_similarity": 0.168
+      },
+      "claude": {
+        "id": "tobymao/sqlglot#6918#2754480293",
+        "length": 218,
+        "code_ref_density": 0.027,
+        "has_suggestion": true,
+        "recommendation_score": 4,
+        "issue_types": [
+          "readability",
+          "style"
+        ],
+        "politeness_score": 0,
+        "semantic_similarity": 0.034
+      }
+    }
+  },
+  {
+    "id": "PostHog/posthog#46328#2746468514",
+    "metadata": {
+      "repo": "PostHog/posthog",
+      "pull_request": 46328,
+      "commit": "aacd4f0d3335481965b1981597d4cbe8c95cb119",
+      "file": "posthog/clickhouse/migrations/0204_add_ai_prompt_name_bloom_filter_index.py",
+      "start_line": 3,
+      "end_line": 33
+    },
+    "evaluations": {
+      "human": {
+        "id": "PostHog/posthog#46328#2746468514",
+        "length": 31,
+        "code_ref_density": 0.0,
+        "has_suggestion": false,
+        "recommendation_score": 0,
+        "issue_types": [],
+        "politeness_score": 0,
+        "semantic_similarity": 0.045
+      },
+      "chatgpt": {
+        "id": "PostHog/posthog#46328#2746468514",
+        "length": 128,
+        "code_ref_density": 0.064,
+        "has_suggestion": true,
+        "recommendation_score": 5,
+        "issue_types": [
+          "bug",
+          "security",
+          "readability"
+        ],
+        "politeness_score": 1,
+        "semantic_similarity": 0.076
+      },
+      "claude": {
+        "id": "PostHog/posthog#46328#2746468514",
+        "length": 232,
+        "code_ref_density": 0.033,
+        "has_suggestion": true,
+        "recommendation_score": 6,
+        "issue_types": [
+          "bug",
+          "readability",
+          "style"
+        ],
+        "politeness_score": 0,
+        "semantic_similarity": 0.085
+      }
+    }
+  },
+  {
+    "id": "probabl-ai/skore#2333#2754367761",
+    "metadata": {
+      "repo": "probabl-ai/skore",
+      "pull_request": 2333,
+      "commit": "1fc51430c933520843e59100497d64552676674a",
+      "file": "skore-hub-project/src/skore_hub_project/authentication/login.py",
+      "start_line": 38,
+      "end_line": 68
+    },
+    "evaluations": {
+      "human": {
+        "id": "probabl-ai/skore#2333#2754367761",
+        "length": 8,
+        "code_ref_density": 0.5,
+        "has_suggestion": true,
+        "recommendation_score": 0,
+        "issue_types": [],
+        "politeness_score": 0,
+        "semantic_similarity": 0.099
+      },
+      "chatgpt": {
+        "id": "probabl-ai/skore#2333#2754367761",
+        "length": 173,
+        "code_ref_density": 0.174,
+        "has_suggestion": true,
+        "recommendation_score": 3,
+        "issue_types": [
+          "bug",
+          "style"
+        ],
+        "politeness_score": 2,
+        "semantic_similarity": 0.133
+      },
+      "claude": {
+        "id": "probabl-ai/skore#2333#2754367761",
+        "length": 179,
+        "code_ref_density": 0.153,
+        "has_suggestion": true,
+        "recommendation_score": 3,
+        "issue_types": [
+          "bug",
+          "readability"
+        ],
+        "politeness_score": 1,
+        "semantic_similarity": 0.078
+      }
+    }
+  }
+]

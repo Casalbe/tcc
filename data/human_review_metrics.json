@@ -1,0 +1,57 @@
+[
+  {
+    "id": "vllm-project/vllm#32790#2729639967",
+    "length": 32,
+    "code_ref_density": 0.208,
+    "has_suggestion": false,
+    "recommendation_score": 0,
+    "issue_types": [
+      "readability",
+      "style"
+    ],
+    "politeness_score": 2,
+    "semantic_similarity": 0.1
+  },
+  {
+    "id": "TheDarkchip/shap-it-like-its-hot#56#2754573033",
+    "length": 5,
+    "code_ref_density": 0.0,
+    "has_suggestion": false,
+    "recommendation_score": 0,
+    "issue_types": [
+      "bug"
+    ],
+    "politeness_score": 0,
+    "semantic_similarity": 0.0
+  },
+  {
+    "id": "tobymao/sqlglot#6918#2754480293",
+    "length": 16,
+    "code_ref_density": 0.133,
+    "has_suggestion": false,
+    "recommendation_score": 0,
+    "issue_types": [],
+    "politeness_score": 1,
+    "semantic_similarity": 0.029
+  },
+  {
+    "id": "PostHog/posthog#46328#2746468514",
+    "length": 31,
+    "code_ref_density": 0.0,
+    "has_suggestion": false,
+    "recommendation_score": 0,
+    "issue_types": [],
+    "politeness_score": 0,
+    "semantic_similarity": 0.045
+  },
+  {
+    "id": "probabl-ai/skore#2333#2754367761",
+    "length": 8,
+    "code_ref_density": 0.5,
+    "has_suggestion": true,
+    "recommendation_score": 0,
+    "issue_types": [],
+    "politeness_score": 0,
+    "semantic_similarity": 0.099
+  }
+]
