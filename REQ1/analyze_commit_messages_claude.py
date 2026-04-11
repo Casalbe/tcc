@@ -127,6 +127,27 @@ def load_input_items(path: Path) -> List[Dict[str, Any]]:
     return items
 
 
+def load_existing_results(path: Path) -> List[Dict[str, Any]]:
+    if not path.exists():
+        return []
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:
+        raise ValueError(f"Output JSON exists but could not be parsed: {path} ({e})")
+
+    if not data:
+        return []
+    if not isinstance(data, list):
+        raise ValueError("Output JSON must be a list of objects")
+    return data
+
+
+def write_results(path: Path, results: List[Dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description="Analyze commit messages vs diffs using Claude.")
     p.add_argument("--input", "-i", required=True, help="Input JSON from scraper")
@@ -141,6 +162,15 @@ def main() -> None:
         "--api-key",
         default=None,
         help="Claude API key (default: from .env/env vars)",
+    )
+    p.add_argument(
+        "--begin-at",
+        type=int,
+        default=1,
+        help=(
+            "1-based index in the input JSON list to start from (default: 1). "
+            "Useful to resume after rate limits."
+        ),
     )
 
     args = p.parse_args()
@@ -159,10 +189,25 @@ def main() -> None:
 
     items = load_input_items(in_path)
 
-    results: List[Dict[str, Any]] = []
+    if args.begin_at < 1:
+        raise ValueError("--begin-at must be >= 1")
+
+    results: List[Dict[str, Any]] = load_existing_results(out_path)
+    existing_hashes = {
+        (r.get("commit_hash") or "").strip()
+        for r in results
+        if isinstance(r, dict) and (r.get("commit_hash") or "").strip()
+    }
+
+    if results:
+        log(f"Loaded {len(results)} existing results from {out_path}")
+    log(f"Input has {len(items)} items; starting at index {args.begin_at}")
+
     sent = 0
 
     for idx, obj in enumerate(items, start=1):
+        if idx < args.begin_at:
+            continue
         if sent >= args.limit:
             break
 
@@ -172,6 +217,10 @@ def main() -> None:
 
         if not commit_hash or not diff:
             log(f"Skip item {idx}: missing commit_hash or diff")
+            continue
+
+        if commit_hash in existing_hashes:
+            log(f"Skip item {idx}: already in output ({commit_hash})")
             continue
 
         sent += 1
@@ -194,9 +243,12 @@ def main() -> None:
                 "raw": text,
             }
         )
+        existing_hashes.add(commit_hash)
 
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
+        # Persist after each request so progress isn't lost if rate-limited.
+        write_results(out_path, results)
+        log(f"Saved progress: {len(results)} results -> {out_path}")
+
     log(f"Done. Wrote {len(results)} results to {out_path}")
 
 

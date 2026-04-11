@@ -59,6 +59,59 @@ def _normalize_header(name: str) -> str:
     return (name or "").replace("\ufeff", "").strip().casefold()
 
 
+def _pick_delimiter_from_header_line(header_line: str) -> Optional[str]:
+    """Pick a likely delimiter by counting occurrences in the header line."""
+    if not header_line:
+        return None
+    candidates = [";", ",", "\t", "|"]
+    counts = {d: header_line.count(d) for d in candidates}
+    best = max(counts, key=counts.get)
+    return best if counts[best] > 0 else None
+
+
+def _iter_dialects(sample: str, header_line: str) -> Iterable[csv.Dialect]:
+    """Yield candidate dialects in priority order.
+
+    We try:
+    1) Sniffer with constrained delimiters.
+    2) Heuristic delimiter based on header.
+    3) Common explicit delimiters.
+    """
+
+    # 1) Sniffer (constrained) — avoids false positives.
+    try:
+        yield csv.Sniffer().sniff(sample, delimiters=",;\t|")
+        return
+    except Exception:
+        pass
+
+    # 2) Header heuristic
+    delim = _pick_delimiter_from_header_line(header_line)
+    if delim:
+        # Create a lightweight dialect with the chosen delimiter.
+        class _D(csv.Dialect):
+            delimiter = delim
+            quotechar = '"'
+            doublequote = True
+            skipinitialspace = False
+            lineterminator = "\n"
+            quoting = csv.QUOTE_MINIMAL
+
+        yield _D
+
+    # 3) Explicit fallbacks
+    for d in [",", ";", "\t", "|"]:
+        class _D2(csv.Dialect):
+            delimiter = d
+            quotechar = '"'
+            doublequote = True
+            skipinitialspace = False
+            lineterminator = "\n"
+            quoting = csv.QUOTE_MINIMAL
+
+        yield _D2
+
+
 def read_rows(csv_path: Path) -> List[CommitRow]:
     required = {"commit_hash", "contains_bug", "commit_message", "la", "ld"}
 
@@ -66,41 +119,46 @@ def read_rows(csv_path: Path) -> List[CommitRow]:
     with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
         sample = f.read(65536)
         f.seek(0)
+        header_line = f.readline()
+        f.seek(0)
 
-        try:
-            dialect = csv.Sniffer().sniff(sample)
-        except Exception:
-            dialect = csv.excel
+        last_headers: List[Optional[str]] = []
+        last_missing: List[str] = []
 
-        reader = csv.DictReader(f, dialect=dialect)
+        for dialect in _iter_dialects(sample, header_line):
+            reader = csv.DictReader(f, dialect=dialect)
+            raw_fieldnames = list(reader.fieldnames or [])
+            normalized_to_raw: Dict[str, str] = {
+                _normalize_header(h): h for h in raw_fieldnames if h is not None
+            }
 
-        raw_fieldnames = list(reader.fieldnames or [])
-        normalized_to_raw: Dict[str, str] = {
-            _normalize_header(h): h for h in raw_fieldnames if h is not None
-        }
+            missing = sorted(required - set(normalized_to_raw.keys()))
+            if not missing:
+                rows: List[CommitRow] = []
+                for r in reader:
+                    rr = {(_normalize_header(k) if k is not None else ""): v for k, v in r.items()}
+                    rows.append(
+                        CommitRow(
+                            commit_hash=(rr.get("commit_hash") or "").strip(),
+                            contains_bug=_parse_bool(rr.get("contains_bug") or ""),
+                            commit_message=(rr.get("commit_message") or "").strip(),
+                            la=_parse_float(rr.get("la") or "0"),
+                            ld=_parse_float(rr.get("ld") or "0"),
+                        )
+                    )
+                return rows
 
-        missing = required - set(normalized_to_raw.keys())
-        if missing:
-            raise ValueError(
-                "CSV missing required columns: "
-                f"{sorted(missing)}. "
-                f"Detected headers: {raw_fieldnames}"
-            )
+            # Reset for next attempt (dialect candidates).
+            last_headers = raw_fieldnames
+            last_missing = missing
+            f.seek(0)
 
-        rows: List[CommitRow] = []
-        for r in reader:
-            # Remap row keys to normalized required keys.
-            rr = {(_normalize_header(k) if k is not None else ""): v for k, v in r.items()}
-            rows.append(
-                CommitRow(
-                    commit_hash=(rr.get("commit_hash") or "").strip(),
-                    contains_bug=_parse_bool(rr.get("contains_bug") or ""),
-                    commit_message=(rr.get("commit_message") or "").strip(),
-                    la=_parse_float(rr.get("la") or "0"),
-                    ld=_parse_float(rr.get("ld") or "0"),
-                )
-            )
-        return rows
+        raise ValueError(
+            "CSV missing required columns: "
+            f"{last_missing}. "
+            f"First line: {header_line.rstrip()} "
+            f"Detected headers (last attempt): {last_headers}"
+        )
 
 #logica de filtragem dos commits (contem bug e possuem churn (la+ld) menor que o valor definido em max_churn (default: 50))
 def filter_buggy_small_commits(rows: Iterable[CommitRow], max_churn: float = 50.0) -> List[CommitRow]:
