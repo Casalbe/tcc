@@ -166,6 +166,9 @@ class RepoResult:
     name: str
     quality_counts: Counter[str]
     reflection_counts: Counter[str]
+    quality_values: List[int]
+    quality_values_by_reflection: Dict[str, List[int]]
+    no_message_count: int
     total: int
 
 
@@ -206,6 +209,55 @@ def plot_pie(counts: Mapping[str, int], title: str, out_path: Path, order: Tuple
     plt.close(fig)
 
 
+def plot_quality_boxplot(
+    data: List[Tuple[str, List[int], Optional[int]]],
+    title: str,
+    out_path: Path,
+) -> None:
+    """Boxplot of quality scores.
+
+    Uses standard quartiles (25/50/75) for the box and sets whiskers to the
+    0th and 100th percentiles (min/max) to match the professor's guidance.
+
+    `data` items: (label, quality_values, no_message_count)
+    """
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError as e:
+        raise RuntimeError(
+            "matplotlib is required for plotting. Install it with: pip install matplotlib"
+        ) from e
+
+    filtered = [(label, values, no_msg) for label, values, no_msg in data if values]
+    if not filtered:
+        raise ValueError("No non-empty commit messages with quality scores to plot")
+
+    labels: List[str] = []
+    for label, values, no_msg in filtered:
+        if no_msg is None:
+            labels.append(f"{label}\n(n={len(values)})")
+        else:
+            labels.append(f"{label}\n(n={len(values)}, sem msg={no_msg})")
+    series = [values for _, values, _ in filtered]
+
+    fig, ax = plt.subplots(figsize=(max(8, 1.6 * len(series)), 6))
+    ax.boxplot(
+        series,
+        labels=labels,
+        whis=(0, 100),
+        showfliers=False,
+        showmeans=True,
+    )
+    ax.set_ylim(0, 100)
+    ax.set_ylabel("Qualidade (0–100)")
+    ax.set_title(title)
+    ax.grid(axis="y", linestyle=":", alpha=0.6)
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, dpi=200)
+    plt.close(fig)
+
+
 def analyze_repo(
     results_path: Path,
     *,
@@ -219,6 +271,9 @@ def analyze_repo(
 
     quality_counts: Counter[str] = Counter()
     reflection_counts: Counter[str] = Counter()
+    quality_values: List[int] = []
+    quality_values_by_reflection: Dict[str, List[int]] = {k: [] for k in _REFLECTION_ORDER}
+    no_message_count = 0
 
     for item in raw_items:
         commit_hash = str(item.get("commit_hash") or "").strip()
@@ -231,6 +286,12 @@ def analyze_repo(
         else:
             is_no_message = reflection == "Sem mensagem"
 
+        if is_no_message:
+            no_message_count += 1
+        else:
+            if quality is not None:
+                quality_values.append(quality)
+
         quality_bucket = quality_bin(quality, is_no_message=is_no_message)
         quality_counts[quality_bucket] += 1
 
@@ -238,6 +299,16 @@ def analyze_repo(
         if reflection_bucket not in _REFLECTION_ORDER:
             reflection_bucket = "Outro"
         reflection_counts[reflection_bucket] += 1
+
+        # For correlation plots: quality distribution grouped by reflection class.
+        # Exclude empty-message commits from the numeric distribution.
+        if (not is_no_message) and (quality is not None):
+            bucket_for_box = reflection_bucket
+            if bucket_for_box in {"Sem mensagem"}:
+                bucket_for_box = "Outro"
+            if bucket_for_box not in quality_values_by_reflection:
+                quality_values_by_reflection[bucket_for_box] = []
+            quality_values_by_reflection[bucket_for_box].append(quality)
 
     name = results_path.stem
     if name.startswith("claude_results_"):
@@ -247,6 +318,9 @@ def analyze_repo(
         name=name,
         quality_counts=quality_counts,
         reflection_counts=reflection_counts,
+        quality_values=quality_values,
+        quality_values_by_reflection=quality_values_by_reflection,
+        no_message_count=no_message_count,
         total=sum(quality_counts.values()),
     )
 
@@ -315,6 +389,9 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     all_quality: Counter[str] = Counter()
     all_reflection: Counter[str] = Counter()
+    all_quality_values: List[int] = []
+    all_no_message_count = 0
+    all_quality_values_by_reflection: Dict[str, List[int]] = {k: [] for k in _REFLECTION_ORDER}
 
     repo_results: List[RepoResult] = []
 
@@ -338,6 +415,14 @@ def main(argv: Optional[List[str]] = None) -> int:
 
         all_quality.update(rr.quality_counts)
         all_reflection.update(rr.reflection_counts)
+        all_quality_values.extend(rr.quality_values)
+        all_no_message_count += rr.no_message_count
+        for k, vals in rr.quality_values_by_reflection.items():
+            if not vals:
+                continue
+            if k not in all_quality_values_by_reflection:
+                all_quality_values_by_reflection[k] = []
+            all_quality_values_by_reflection[k].extend(vals)
 
         # Plots + CSV
         plot_pie(
@@ -361,6 +446,39 @@ def main(argv: Optional[List[str]] = None) -> int:
             order=_REFLECTION_ORDER,
         )
 
+        # Boxplot for this repo's quality distribution (excluding empty messages)
+        if rr.quality_values:
+            plot_quality_boxplot(
+                [(rr.name, rr.quality_values, rr.no_message_count)],
+                title=f"{rr.name}: Distribuição da qualidade (boxplot)\nWhiskers=0–100 percentis; Box=25–75; Mediana=50",
+                out_path=out_dir / f"{rr.name}_quality_boxplot.png",
+            )
+
+        # Boxplot grouped by reflection class (best for seeing correlation)
+        box_groups = []
+        for key in _REFLECTION_ORDER:
+            if key in {"Sem mensagem"}:
+                continue
+            values = rr.quality_values_by_reflection.get(key) or []
+            box_groups.append((key, values, None))
+        # Include "Outro" if present
+        if rr.quality_values_by_reflection.get("Outro"):
+            box_groups.append(("Outro", rr.quality_values_by_reflection["Outro"], None))
+
+        try:
+            plot_quality_boxplot(
+                box_groups,
+                title=(
+                    f"{rr.name}: Qualidade por classe de reflexão (boxplot)\n"
+                    f"(exclui 'Sem mensagem' do boxplot; sem msg={rr.no_message_count})\n"
+                    "Whiskers=0–100 percentis; Box=25–75; Mediana=50"
+                ),
+                out_path=out_dir / f"{rr.name}_quality_boxplot_by_reflection.png",
+            )
+        except ValueError:
+            # No non-empty quality values to plot for this repo
+            pass
+
     if not args.no_combined and len(repo_results) > 1:
         plot_pie(
             all_quality,
@@ -379,9 +497,57 @@ def main(argv: Optional[List[str]] = None) -> int:
             all_reflection, out_dir / "all_reflection_counts.csv", order=_REFLECTION_ORDER
         )
 
+        # Combined boxplot: side-by-side per repo (quality only, excluding empty messages)
+        per_repo_box_data = [(r.name, r.quality_values, r.no_message_count) for r in repo_results]
+        try:
+            plot_quality_boxplot(
+                per_repo_box_data,
+                title=(
+                    "Todos os repositórios: Distribuição da qualidade (boxplot)\n"
+                    "Whiskers=0–100 percentis; Box=25–75; Mediana=50"
+                ),
+                out_path=out_dir / "all_quality_boxplot_by_repo.png",
+            )
+        except ValueError:
+            # If some repos have no data, plot_quality_boxplot filters empties; if all empty, skip.
+            pass
+
+        # Combined boxplot: one distribution across all repos
+        if all_quality_values:
+            plot_quality_boxplot(
+                [("all", all_quality_values, all_no_message_count)],
+                title=(
+                    "Todos os repositórios: Qualidade (boxplot agregado)\n"
+                    "Whiskers=0–100 percentis; Box=25–75; Mediana=50"
+                ),
+                out_path=out_dir / "all_quality_boxplot.png",
+            )
+
+        # Combined boxplot grouped by reflection class
+        combined_groups: List[Tuple[str, List[int], Optional[int]]] = []
+        for key in _REFLECTION_ORDER:
+            if key in {"Sem mensagem"}:
+                continue
+            combined_groups.append((key, all_quality_values_by_reflection.get(key, []), None))
+        if all_quality_values_by_reflection.get("Outro"):
+            combined_groups.append(("Outro", all_quality_values_by_reflection["Outro"], None))
+
+        try:
+            plot_quality_boxplot(
+                combined_groups,
+                title=(
+                    "Todos os repositórios: Qualidade por classe de reflexão (boxplot)\n"
+                    f"(exclui 'Sem mensagem' do boxplot; sem msg={all_no_message_count})\n"
+                    "Whiskers=0–100 percentis; Box=25–75; Mediana=50"
+                ),
+                out_path=out_dir / "all_quality_boxplot_by_reflection.png",
+            )
+        except ValueError:
+            pass
+
     print(f"Wrote outputs to: {out_dir}")
     for rr in repo_results:
-        print(f"- {rr.name}: n={rr.total}")
+        print(f"- {rr.name}: n={rr.total} (sem mensagem={rr.no_message_count})")
 
     return 0
 
