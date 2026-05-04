@@ -51,16 +51,100 @@ def _normalize_spaces(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip())
 
 
+def _unescape_llm_text(text: str) -> str:
+    """Undo common escaping artifacts from LLM outputs.
+
+    After JSON parsing, strings like "\\\"Sim\\\"" become '"Sim"'.
+    But sometimes we still see literal backslashes or nested quoting.
+    """
+
+    # Be conservative: only handle the most common " and \' artifacts.
+    return (
+        text.replace("\\\"", '"')
+        .replace("\\'", "'")
+        .replace("\\\\", "\\")
+    )
+
+
+def _strip_wrapping_pairs(text: str) -> str:
+    """Strip wrapping quotes/brackets repeatedly.
+
+    Examples:
+      '"Provavelmente sim"' -> 'Provavelmente sim'
+      '("Sim")' -> 'Sim'
+      '[\"Não\"]' -> 'Não'
+    """
+
+    s = _normalize_spaces(text)
+    pairs = {
+        '"': '"',
+        "'": "'",
+        "(": ")",
+        "[": "]",
+        "{": "}",
+    }
+
+    changed = True
+    while changed and len(s) >= 2:
+        changed = False
+        s = _normalize_spaces(s)
+        if len(s) < 2:
+            break
+        start = s[0]
+        end = s[-1]
+        if start in pairs and pairs[start] == end:
+            s = s[1:-1]
+            changed = True
+
+    return _normalize_spaces(s)
+
+
+_RAW_TUPLE_RE = re.compile(
+    r"^\(?\s*(?P<label>.+?)\s*,\s*(?P<quality>-?\d+)\s*\)?$"
+)
+
+
+def _parse_raw_tuple(raw: Any) -> Tuple[Optional[str], Optional[int]]:
+    """Parse Claude 'raw' field like: '("Provavelmente sim", 40)'."""
+
+    if raw is None:
+        return None, None
+
+    s = _normalize_spaces(str(raw))
+    if not s:
+        return None, None
+
+    m = _RAW_TUPLE_RE.match(s)
+    if not m:
+        return None, None
+
+    label = m.group("label")
+    q_str = m.group("quality")
+
+    label = _strip_wrapping_pairs(_unescape_llm_text(_normalize_spaces(label)))
+
+    try:
+        q = int(q_str)
+    except Exception:
+        q = None
+    return (label or None), q
+
+
 def normalize_reflection(label: Optional[str]) -> str:
     if label is None:
         return "Outro"
 
     s = _normalize_spaces(str(label))
+    s = _unescape_llm_text(s)
 
-    # Some stored labels include extra quotes: '"Provavelmente sim"'
-    # Strip surrounding quotes repeatedly.
-    while (len(s) >= 2) and ((s[0] == s[-1]) and s[0] in {"\"", "'"}):
-        s = _normalize_spaces(s[1:-1])
+    # Some runs store the whole tuple in reflete_mudanca, e.g. '("Sim", 82)'.
+    raw_label, _raw_quality = _parse_raw_tuple(s)
+    if raw_label:
+        s = raw_label
+
+    s = _strip_wrapping_pairs(s)
+    # Drop trailing punctuation that often appears in free-form answers.
+    s = _normalize_spaces(s.strip(" \t\r\n\"'.,;:!"))
 
     key = _strip_accents(s).lower()
 
@@ -344,8 +428,17 @@ def analyze_repo(
 
     for item in raw_items:
         commit_hash = str(item.get("commit_hash") or "").strip()
-        reflection = normalize_reflection(item.get("reflete_mudanca"))
-        quality = normalize_quality(item.get("qualidade"))
+        raw_reflection, raw_quality = _parse_raw_tuple(item.get("raw"))
+
+        reflection = normalize_reflection(item.get("reflete_mudanca") or raw_reflection)
+        quality = normalize_quality(
+            item.get("qualidade") if item.get("qualidade") is not None else raw_quality
+        )
+
+        # If the explicit field normalizes to something unknown but raw is parseable,
+        # prefer the raw label (usually closer to what the model intended).
+        if reflection == "Outro" and raw_reflection:
+            reflection = normalize_reflection(raw_reflection)
 
         # Decide "no message" using msgs_and_diffs if available; otherwise fall back to Claude label.
         if commit_hash and commit_hash in commit_messages:
