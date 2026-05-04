@@ -258,6 +258,73 @@ def plot_quality_boxplot(
     plt.close(fig)
 
 
+def plot_reflection_stacked_by_repo(
+    repo_results: List[RepoResult],
+    title: str,
+    out_path: Path,
+    *,
+    normalize: bool = True,
+) -> None:
+    """Stacked columns: one bar per repo, stacked by reflection class.
+
+    If normalize=True, each bar sums to 100% (recommended for comparing tendencies
+    when repos have different sample sizes).
+    """
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError as e:
+        raise RuntimeError(
+            "matplotlib is required for plotting. Install it with: pip install matplotlib"
+        ) from e
+
+    if not repo_results:
+        raise ValueError("No repositories to plot")
+
+    repo_labels = [r.name for r in repo_results]
+    totals = [sum(int(v) for v in r.reflection_counts.values()) for r in repo_results]
+
+    # Only include categories that actually appear in the dataset
+    categories = [
+        cat
+        for cat in _REFLECTION_ORDER
+        if any((r.reflection_counts.get(cat, 0) or 0) > 0 for r in repo_results)
+    ]
+    if not categories:
+        raise ValueError("No reflection categories found")
+
+    x = list(range(len(repo_results)))
+    bottoms = [0.0 for _ in repo_results]
+
+    fig, ax = plt.subplots(figsize=(max(9, 1.6 * len(repo_results)), 6))
+
+    for cat in categories:
+        values: List[float] = []
+        for rr, total in zip(repo_results, totals):
+            count = float(rr.reflection_counts.get(cat, 0) or 0)
+            if normalize:
+                values.append((100.0 * count / total) if total else 0.0)
+            else:
+                values.append(count)
+
+        ax.bar(x, values, bottom=bottoms, label=cat)
+        bottoms = [b + v for b, v in zip(bottoms, values)]
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(repo_labels, rotation=20, ha="right")
+    ax.set_title(title)
+    ax.grid(axis="y", linestyle=":", alpha=0.6)
+    ax.set_ylabel("Percentual (%)" if normalize else "Contagem")
+    if normalize:
+        ax.set_ylim(0, 100)
+
+    # Put legend outside to avoid clutter
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5))
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, dpi=200)
+    plt.close(fig)
+
+
 def analyze_repo(
     results_path: Path,
     *,
@@ -541,6 +608,20 @@ def main(argv: Optional[List[str]] = None) -> int:
                     "Whiskers=0–100 percentis; Box=25–75; Mediana=50"
                 ),
                 out_path=out_dir / "all_quality_boxplot_by_reflection.png",
+            )
+        except ValueError:
+            pass
+
+        # Stacked chart: one column per repo, layers are reflection categories
+        try:
+            plot_reflection_stacked_by_repo(
+                repo_results,
+                title=(
+                    "Reflexão da mudança por repositório (100% stacked)\n"
+                    "Cada coluna = um repositório; camadas = classes de reflexão"
+                ),
+                out_path=out_dir / "reflection_stacked_by_repo.png",
+                normalize=True,
             )
         except ValueError:
             pass
