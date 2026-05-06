@@ -1,0 +1,3002 @@
+[
+  {
+    "commit_hash": "350cb69aed92a2b4209fac1e18d1636fb3e3a0aa",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "e5eb8594464fbb5a6a104f9e78388778ce5bba37",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "1d4a115a37867ad58661aebb58cc4386c3871992",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 62,
+    "raw": "(Provavelmente sim, 62)"
+  },
+  {
+    "commit_hash": "54857ad1a7772753418f532881f2438586b66aa5",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "64bfa0487b3df4c92cb570ba632c5b4da4b48cbc",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "3704b99522dfd24849facdd574a2fdb218326469",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "a7cfd655322745b724523195f9879aa9896fa968",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "20288400f3ad4a29fe6fa4623c35314c0f8eee05",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "544e802910357b54861def90375060b58a78c826",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "e11744e164c6fc3d10954bf1e2cf1f0b72804330",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "83c9ec765e12362e7a459214404765f5084f4291",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 3,
+    "raw": "(Provavelmente não, 3)"
+  },
+  {
+    "commit_hash": "b619cb09d96562d701fcc9f7f612b9bbd903ec6f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "ff50e5ab475f5ca5a86d6dd0f13bc088bed4fdc3",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "31cae34d078b5fc2bcb5f9b2e307aeef92079cf4",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "5315d37c207c907c2b732ef9c34ab61aaee8fa13",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "e4b2558fa32fae6f9833a13da8044a2f09f61e0f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "c13ef1afed3c5c4d63909b817cc2975b0937c5b1",
+    "reflete_mudanca": "Sim",
+    "qualidade": 85,
+    "raw": "(Sim, 85)"
+  },
+  {
+    "commit_hash": "22113f81fdb552e389d971c2d45c90271d5544ff",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6e077b0ae5eadc0d797e489953acf04f2bf95849",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 18,
+    "raw": "(Provavelmente não, 18)"
+  },
+  {
+    "commit_hash": "64b130a8e73018972dab3df9e5ef42646ee9a68d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "b834d27bc96423e2402ebd829f6892ff7b802f41",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "a05ed5bc11ceef1ab98bd6cfdb7532266256c98c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "c114bf330dc16cbe4155eef3d27d4f33d2ddf2ae",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 15,
+    "raw": "(Provavelmente não, 15)"
+  },
+  {
+    "commit_hash": "7bdd8dcac39a25749b497c71fcbf206b31388061",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "164ef6ff2b4f4c8ee203003193178d2e2cb2ff68",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "423a71598939166acf36f80475d486e071ef117f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "54f69a954cdc41b76cfbea4fe6c5afd19fafa374",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "7ef04b25cc59f87abf80ec25c3c1b229bf77a37e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "ab22b34891b9b9002f302710facd110ac4af7657",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 45,
+    "raw": "(Provavelmente sim, 45)"
+  },
+  {
+    "commit_hash": "bb0bdfd101933ab330093acb873a53d180460938",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "1508feb28360c20074bd77a8ea69c0cfff10bd78",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "59f29714aa8d084bdb3f96b87ee03775d7e2b865",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "bde34552a279a13a7980049455d6a79951cc5c5d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "c3673c0345a242cd05164319415cc8dc672cce80",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "c449668d3e1a438850f0e9725146c65a2a0cb89b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "2fd6061e1c8c91f3d1398826ddfddbcefce477e8",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "491b9b89c42ceab56cf2daec11a61adedd9f7180",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "321b8c80fd192c1528eb95446aca0a9319aab278",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "e1f31a2bb67d5b70f12951562da3fa33b141cafe",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "3c0f8ed4ae8659d754eacb8c458aa45d983b44f2",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "61966462919166f9c0b31abf4527ccdab7218e4c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "4978d3f4bbb41155c1a784280f40f5a2848673fd",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "1ba34d91fcaf58f6e920084f246cae5dfff5468e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "475493130de825caf884d537d193d6b3ff8d0279",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "bbebcb125e4f0593608bc4d9419ffc7933da147c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 62,
+    "raw": "(Provavelmente sim, 62)"
+  },
+  {
+    "commit_hash": "1a003fbcc2ac3dc199cd3f32c054d4a37d30a970",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "fb7f8e765515396ea07b48c1d5b8682ccf2863eb",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "d00f621d7b07d3ea7b5560b8c261353a94ee3a0f",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "67e87363485abad425827e6e82d5a010edf43652",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "a14bf40b886b93a04ca053d19813e9fa2d7010e2",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "267ef0a642461620ad8bf227775c8c592c27c174",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "4feb696be732ea07027f964974547b3976f25ed5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "a433f22c241a7687a78b0cfe69b80a10f8e97fa3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "3dc0c8e4e5f111dbc1627ae3e048690a01f91f19",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "ea733aa997f0d3d71ae530485706b5ed76d02fd5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "c306d06cf9d48e3e861f63fba19affd42a83c6d3",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6d70d550e6b8f54750ef2c560888f98969c51557",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "abb1b3e770fd09acc44bc2152d10020d9479f600",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "baf9a6e24c5a11b4f26be6335e87d27fc34b5f0c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "54612f51413c63d37083f7c1f8de4bcb1cbed639",
+    "reflete_mudanca": "Sem mensagem",
+    "qualidade": 0,
+    "raw": "(Sem mensagem, 0)"
+  },
+  {
+    "commit_hash": "6cbaa93b8274c3902d20f5b04f76ceaf26e290af",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "a839456c417fbd87420726ff68048178038bb3ca",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "2ecb7e5e2c8b39de8590654a3902a75974ccd838",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "42dd813494eb8ecd0a2b602ecba1cbc3015fd8fd",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "aa1eac7979fc4fa1c74813fcdc44b8dbb166317f",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "71c1d59d1abb69abbe5d56f142df318fd0e18193",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "aa71f918c3c0354718d5a12b88c34472f7e538cd",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "69c7f25bed1a3dc1a8343b60411d8d9884cfc956",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "7a93da98af8694feb58e97fdbdcbc64a3d07160c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "f44acab12c7fe509335f6ae9df94584a905d42f7",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "3516eda61c669945eec99fcd3bc8ccac4bb9829c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "796aca39162308d2deb83738b326e91d1d489de9",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "d2746c65b564fe9ec02989d8a862f7eb9b030f1e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "58a0150f64b95fd27cf99ade86dfc30db9976f5e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 18,
+    "raw": "(Provavelmente sim, 18)"
+  },
+  {
+    "commit_hash": "9f5eac1f97e813d56d0288a5c21bf85ba64b1c9e",
+    "reflete_mudanca": "Sem mensagem",
+    "qualidade": 0,
+    "raw": "(Sem mensagem, 0)"
+  },
+  {
+    "commit_hash": "7d8b794a9a8bd0cd1392b8a4e37f5b5afd9589e2",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "026387013e6a6e924889216f5524b2ddd942ca20",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "4e70c059799c4be784190cfaa6f9ae02b54206f0",
+    "reflete_mudanca": "Sim",
+    "qualidade": 90,
+    "raw": "(Sim, 90)"
+  },
+  {
+    "commit_hash": "77f8dff61742782aea8cc58a8fd3496ff5ebf165",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "13d44b4aac579e5748d6909b7ef010a4f920df13",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "42a344683a3a9d4ca9a87ea0c6ddf7c5cbe953ea",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "9fc64aefe14938a2fbe9b28ee7e7e8c790c29103",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "6913c8b4a49873139750a708178920bb74aeb9d5",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "2bdded3540a9723c240152a37627846433e61234",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "a157098f7c9458351061b30a8f2db460f49f1ea6",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "200d4a4ec3de5958c9f85bcf2e2c9fa433dd902d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "6b135c9391708b161ae95804b117638b9bfb65bb",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "2081153e6986ebd7b56fe5f6b5b58f08ea750551",
+    "reflete_mudanca": "Sim",
+    "qualidade": 40,
+    "raw": "(Sim, 40)"
+  },
+  {
+    "commit_hash": "eedc75bfe1fc77b41c8da8cab45e32c3efcf5b08",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "b847d29785346b1dc3fb36fe410ca91f303a80be",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "b3ce105b3199e6cea82dd1e96dcf36c31e47b744",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "7bf3bae1a48389f03264787a8606ae49bda9f2cc",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 45,
+    "raw": "(Provavelmente sim, 45)"
+  },
+  {
+    "commit_hash": "4b130b2209800ce60bc0a8874dd728166853dd5b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "003b76f9acf87c532434429bb2076c2521b806d7",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "ca1a20eba46a72beb7ce11b6c2a889f36430280a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "bd57c3afe5e3133bae7e6d39d11e41ad6d701347",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "b55d49f5fe4446507f1b9fd5f78db005fc0f639c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "6399c74f1742b8f639633b1ba9c4f2bbea9f06c3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "8299e75577645e420745ea48276b6e8e4ceeb138",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "5d7e44fc8e855e3f15349876c48151018fa5d929",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "8c2f099ab5de5d0396dd2eb81cd5c55fae5e1579",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "e67cc8a346d43a17c2789bd4e62dc435355956dc",
+    "reflete_mudanca": "Sim",
+    "qualidade": 90,
+    "raw": "(Sim, 90)"
+  },
+  {
+    "commit_hash": "25fe3c709896a01abf6a2d851e646352f4f9d895",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "d3f9d6ad4f1beb46792dda93a2df518d3a1c2b2a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "092c7a6be58eb76d1f65cd4609ac7e2e17e90a89",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "713b65e19c1cf58bbc5dd4dd8845ddf4a67aaa26",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "47312ec134558e662579cea3eca1b0ac8f401fe6",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "3643248ae2d8c2030616f7de15d6eff6136e3a03",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "a2a33e1344e9c9b7fb72c1ec0457f87692bd599c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "3385497228038f5c849d91b55f60ba96020ffb04",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "ba876c150a83b227bb5a6e78e295e45077ed02cf",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "440279e803305d4bc6d1cecfe8bf0eab4597e088",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "7980b8a5cc86d11a741ba3c196638ddf7d47f078",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 25,
+    "raw": "(Provavelmente sim, 25)"
+  },
+  {
+    "commit_hash": "f2af0196453e6872db9f082f6c7175060abce439",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "071797f53942e3c2063e031803a91463a68f4d2a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "c90c058bf017ba5a3ce73ff03bf7cda8fe0d14ce",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 18,
+    "raw": "(Provavelmente sim, 18)"
+  },
+  {
+    "commit_hash": "2e20099e328dcaff068841e8637e268fb6d17beb",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "8cedf57eb152440ff06d75066799e6e249d1d336",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "25eb9e2a66772875dc09c609747d94c368c69501",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "cbb131570e1e6cc60cb629fc049740198dbc1aa7",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "290d3b51985c4dedf11e37e62db5a26fd811122a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "231e1e70d853ddc0a057e39ce1f01e429e208daf",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "4371756f162cd548d9dce3d434bec2bcdedc4883",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "9b5590464749d7e42c1c1f281aad2f591385c2e1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "c5aaba2c34f4cca3395c182aa1aa312208bbf119",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "068151369334158d8c4f30e80546055912eb59cd",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "89b28071704916b42c9d15171fdd387d5f0f1e0f",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "b1765f46376d6ed29ccb8424b1697149e018d35f",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 28,
+    "raw": "(Provavelmente não, 28)"
+  },
+  {
+    "commit_hash": "9643e8ba37252e79ea46cb023026db19b3017b07",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "7f00f11c0176e051d8981a3f16768dddee972722",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "af30fe7852f37283f96cefb0d8c4465a8be97b8a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "4a5135c34e11859ebad5a59801a0b93531c4ad55",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "7266928e77c30b6cb0a0e9dd5f53cea4d6d590c1",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6da00552749fedf69e68226e1c6b5a171dd7b024",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "6e2341a48e7e9cf226069d8ac55b51217035628c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "24632b0ee04f7c1c5b895b8ce82afb2cbd878801",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 10,
+    "raw": "(Provavelmente sim, 10)"
+  },
+  {
+    "commit_hash": "4f8db3eb4c6106f7c7128edc37e428ef1b086588",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "8fa5394c491cd3f4d934d7101b9b919aba6aa357",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "7bfb924aea0a459540a58db002f5a6b00842ff08",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "1321fe1a816ebe062eb7e14e5a712ea641fa3d40",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "3c4b21493d49d93431c4842ee2187b7f28362c38",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "f48936e8efb1e749342e50b19ebd14a29105a2df",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "c6a605705ce0070e368537155f989f086ba2f403",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "8738e47d03db3555376f2da37f1e0604052a46de",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "e2e6b2d730bac6833324b529f76ca3064288900f",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 20,
+    "raw": "(Provavelmente não, 20)"
+  },
+  {
+    "commit_hash": "cac34636490bd1799b93af65c3257b2b5b32e931",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "6fafb4d3708238a9b254a534bd9868bbfb80c8db",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "cbac98673685334623c1018ed7674bf269629b52",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "2ca05fe45d7fe8e3a18a588d1f1940fc811d37b6",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "bc18c38d1ac0d8369c338056fce99dbbcee6c854",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "5fefb9f8e70f61c177a563653932bfb832af0887",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "1aa1827d64a354d01922232b2750a42dede42631",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "c19b247aec78552d1dca7d9c2a679203c4d936fc",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "f389e9dfc2113b1e1655fd4d0cb8c98ebd880fc1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "37e86216237ad284fc92b2cd017613765b9e062b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "4eadf2d6cd1aef35bea694ae9938cb4d74cf9239",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "311c521d9674c2e1fdab186dac8c1a23f95a2030",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "1d8a696fd555a664961f9d365de29dcc6689e15a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "9cabea224c35e9fa8c16bb3090bfb6f31705c50e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "d5a3f52d6267f52ec6e97134e4f1fd2b1b0fdcbb",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "3eba7651f37a224b20491da2bd1ab09613646595",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "e230c0b6726598fd6cf5a404ce805c2d871e18eb",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 30,
+    "raw": "(Provavelmente não, 30)"
+  },
+  {
+    "commit_hash": "950c57600e72b28760c35b1c0fc2b371a106fa54",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "6eb05251854b15b073357b3e30ebcf4f182af1a8",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "4de2f24895315e90db17d15c3e07f87df265e301",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "00bcb8a0edf268b16c99c521c0d7ced00689e7db",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "ed8b7bdff9a7ab05ed7e34f575a3802b7cc3e51b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "497e3c9b5e1cbc0070fda64a15ce5ded4213be92",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "74bd93d5979540915e9bb5fafb4122b897214f19",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "da90363c126cc7d6381f7e5c1530ff99647e4fa4",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "22cabc5514920a94d04fc52ffbd123ea7dda6fcf",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "071484c5d8406feeed7305d6a764257feba6bca2",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "078633e729adaea7847fa2ceba1a2792062017d6",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "bd2c53c2a93a84166eaca08fc955395538c66343",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "7e8ee18346402755df9f97ec754c30bc08cf943d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 60,
+    "raw": "(Sim, 60)"
+  },
+  {
+    "commit_hash": "cddd68eb27d8a333ac4b618ed53893fd24e2873c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "dcd2332a4d5da3f28e514c47ae5732cfc17d346e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "678cd5c6b6e5c1dd8be236f43d11ecdeb0bb94f3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "ef56e51cd32b0590d5e048e8a6ff777b8a64916b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "884d70edf00783d1fc38bbce3429e3fe6667c1d8",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "0ccaaac1692f4e913b92f7dff219d1f9d9e12fb3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 10,
+    "raw": "(Provavelmente sim, 10)"
+  },
+  {
+    "commit_hash": "70a0237bed5c7490ce47a679794503066c90700f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 62,
+    "raw": "(Provavelmente sim, 62)"
+  },
+  {
+    "commit_hash": "038e56c4df2b0113b6e00ddd164b5ac8306fc60d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 62,
+    "raw": "(Provavelmente sim, 62)"
+  },
+  {
+    "commit_hash": "4d8e84155eb745c9007602d7edb1ca0465c23545",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "6ec8d375f5a68e706a05624274b5fa3d1c460784",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "41aeed43344d6f8ddca96bdda120ec482c750747",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "a10a951a4651fed4a352008e43e616d0b16a0515",
+    "reflete_mudanca": "Sim",
+    "qualidade": 55,
+    "raw": "(Sim, 55)"
+  },
+  {
+    "commit_hash": "920c58df71f2dd02b0221dd89e0b7dfc57f8c778",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "a03dc605085f2f01b954a376094daef71cb8aa3d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "3ded1cc530537c46406925fc6d8308566d636efc",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "bd511f268a5c503e7f4fb10c9f6d7371eb93ad20",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "803a2b13f209fc1346656b892bd35b5fb27db8e5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "c56b20eee9f567063fdc7ac77941774672452d5f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "2fd9273d97ce995cadc71e87aa6216a69972cbc1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "1c688d1bbe9e48234a6b2a6a6558ac441e26997e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 45,
+    "raw": "(Provavelmente sim, 45)"
+  },
+  {
+    "commit_hash": "81489528d03828e781e14024ca4ba23470fb4b56",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "9778b946e537a315c3e89cce1ee40e44ef398515",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "6fd4e2b4145a253c5cf0f84d1d7ef71f2bee05bf",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "5dcc9bef6ebd6be7ba7b06d355e2cebca2b8f054",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "4d985ea96b418ff782a1a2a2237ca399a36a9616",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "be0e8f7fb01ed61780c1ddd45eecf3d315479bb3",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "cfe0d67dc11377abf1befd302c1fce63a006c52a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "cbaa98835c5c088ab23a2096ae2d3a6e78467bda",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "55f5354380781cfe3626194bffbddc65ea94f201",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "949ab57c7a36c641deb557b96c04e418e4456993",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "051b4210e3cb3f3a9ec7cd5ab4503b48f279ab48",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 18,
+    "raw": "(Provavelmente sim, 18)"
+  },
+  {
+    "commit_hash": "bc67a4617d4377ae612cc17ece8a7f681b46e4f7",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "7a2b417d1563e3d47acddebe6a0738bb401a1c22",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "72b523d05564c3a8b9e0d872227da64ffb5e8130",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "a1ac1989cf01671d6ed4fb14618c78713d1c944d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "b8e376ceb9a72c8d132e21699f11fe2b36b8c68c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 45,
+    "raw": "(Provavelmente sim, 45)"
+  },
+  {
+    "commit_hash": "ee2f8e0472ef54a3dfc0e47f3ca3848be42cea15",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "0a95a17da2b7b9e34ecaeefa9f910c04977b277e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 85,
+    "raw": "(Sim, 85)"
+  },
+  {
+    "commit_hash": "3055eeff9379cae9204ab84d441aad9719338fc5",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "b45128f1c394808bca6c4ca345036f6b72a9b61a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "13f41aa90b382a43f3e4b10562a2860535e41db5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "6e27af13ebc225e53b841a1e6a8faacdeb804919",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "a5d7eb90a8295dae6cbd872d8f81920c63a397bc",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "821720213437d1da3515d8ce12916ca16ee33b8e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "498d2d1edc85d76bb5fe20adf426a4e32e5e1595",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "1e790e207ff45359b95f564e139e64c36d5c56b8",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "d906936e0e18e59ab469e2c5e8d17a16f4b4ed76",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "02233addcccfbb1a899c62537a38d6e52ce33ae8",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "6ea80b470b112138d04bf0c70c17d0b33d821827",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "a1157deb57c7e654d6fb19c98b04ebd974152aab",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "65ff0feacf98c4b7096a3c5df4dd6efd4ffe5fa2",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "148f7203fa8d0511834f96f6939a913f1e38aaed",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "449e5755956b5dc8fd36232649893ba252b47535",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "656d88c6112411720161e5deef79372adb78c7b4",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "098dea8633cfd638ba92d3eb4b2577aca434b074",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "ca746f512dc0ca40d9f33b9019a21c5317a88d02",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "d95572767e196d92d8bcb609d0da593888d51709",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "9a5529f4d188a572b5862439e9a590342c027135",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "3903296b2ab78735ba19f1fb0f5fb66593b19115",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "ff038a5b970faab5f7642f3cdda0cdc6156f9339",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "541f18558dc1f71cdbd69e840f888fc756b3ba69",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "cd3f1bcab0916bf3fabe2351691a58c29fd787db",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "b46e5b528103f204224bfe007f3d2ffe3513a8a1",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "fa940fda67f51401116315ff6d162f2fe916d5f3",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "a53d85404eeb6bf9b63d3591530ae95c905ed9cb",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "3ded6fd5117a272220cad7b3687bee7b442d27e7",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "9ad6e0db30631ce5a68d5980f1cc8e0f5861852b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 25,
+    "raw": "(Provavelmente sim, 25)"
+  },
+  {
+    "commit_hash": "a67fd49091644f10980224f582019a1486d0c8e8",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "42c0cd33a2b473e74401630a525df0c1f5b67e75",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "677efc7679b7d58acab3a77541f28f7b21c5432e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "0c001f080b567128e61dac7f2d6c619c55fc33be",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "76501c8aed9eb7239b2d69506d70e7ebd76f335c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "9b6d8878fd16e8792491702268a373b9aa1a4810",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 20,
+    "raw": "(Provavelmente não, 20)"
+  },
+  {
+    "commit_hash": "d67547d82d0a23ec61eca0cb637087d47db1d47f",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "7515bb484eac9d04b5f49fde94566d1807b84dea",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "5927d47b4fa379377e2285694a8c5db907d640b6",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "40ac5a692bedde826da70158cb1194e6774b8888",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "e06099c6076a3cee2b8fc39284744239d772ff2f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "8dd090f6daced556a528b2ce1e0ce2d520b7c877",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "efd3b390296a22d156d2beedb4c4a5705b828a78",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "b6bd3da520466885a4c9f427994e456a2d2a0091",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "a40a546e47efb43e070ee4cfe89ecf4b627ade64",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "4379ce83803c7318e3412fe356dc64412f2ed067",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "1d0085e47a15c56b389b0914c0a7e1e3e6d24db3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "b3b0f204126f879805554dcaa1a185079a475421",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "3a1cc077693ce7b81bb37a44ada3c23a36c62775",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "0a3cee72ac0cd0ca695395b92cd74ff026da8e6a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "feb78cda0c82e492e31ec228121db5441396dfcb",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "f3e9cf9c6b8790e35028888971327fa759137482",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 25,
+    "raw": "(Provavelmente sim, 25)"
+  },
+  {
+    "commit_hash": "2de0da358d7be6ef6955cc114b502fbb08d2638e",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 40,
+    "raw": "(Provavelmente não, 40)"
+  },
+  {
+    "commit_hash": "8f1e1b4551c07c48fc59682d606ec5957b9d9178",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "a6e0803a7ffa374214deca4929865ddaa1c2263d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "34ec62058a56ca7867966dbeee25b8df91687b43",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "6c843984115a32806994718d4ae68638024b08f2",
+    "reflete_mudanca": "Sim",
+    "qualidade": 50,
+    "raw": "(Sim, 50)"
+  },
+  {
+    "commit_hash": "2b83160dcacf5aa0c5c44e35ea4c499e1511d1b3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "aae2420e8bb4c605a1681068854184ad3c241173",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "90d490059dea8c9f2a3d96d55229f7534907e932",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 20,
+    "raw": "(Provavelmente não, 20)"
+  },
+  {
+    "commit_hash": "708f67c7a9d9970ae276cf82fc955df507b9ca1e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "85f755513233fb499082d8f76c0d68e8773a6714",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "cad3e709feef10cd69439a49c163f1f59f7bf81f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 18,
+    "raw": "(Provavelmente sim, 18)"
+  },
+  {
+    "commit_hash": "f79b7a56b450f197aedb427fdba024d4f820b6b8",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "77d514a55047951cc71097a1b8ecdf2a55e0a4cf",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "837f0cbea02dab7cc50dc44a322be58fb105cfb1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "55780ae0e8fb030ea3a4b367a865e27f437604ee",
+    "reflete_mudanca": "Sim",
+    "qualidade": 60,
+    "raw": "(Sim, 60)"
+  },
+  {
+    "commit_hash": "e00f0ea39eb2237828454c51d13687870a111f55",
+    "reflete_mudanca": "Sem mensagem",
+    "qualidade": 2,
+    "raw": "(Sem mensagem, 2)"
+  },
+  {
+    "commit_hash": "c7dbd366ba836b4a387d2cc66f4614a534b15379",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "ebb3008dbde6354488c878e0076bae496f045968",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "bb0cc20e64d29b05eb32fd9f970f9697d473000a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "c42f7f14609cf9ecf62f5011b02cf12d7f3c52cb",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6be30fb524079e635ae8e8637839bd19d0ba7eb0",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "e008c68408ebf9da0b0498bd456fed727dabd232",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "5004b99e92cd1579993c950edd904e7b9457b349",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "0384d37083b032b2e6dd2e33177816cfd685c4ec",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "5e2c0a87c9e1ab57a5340be37687831aab55b175",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "725a03eb4b5afd11814733d8cfeb1dcbd2b97a84",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "51689ece825e077f0077cf26c86b2efa15b76627",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "65818b6bf0ddf5351586f4bddabfa28d3299c299",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "cb9604f2ac5bdfdb3452a19d6e31e30d6ddfe157",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "7cd15c47d8d5cfb35c8eaf5e7098648bb6b3ac59",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "61a72beda5e625a9073b5f6c3b5122fd76bcda03",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 38,
+    "raw": "(Provavelmente sim, 38)"
+  },
+  {
+    "commit_hash": "953e9e2b3c6d79ffb0379ca8a8aa4e7157c3ef28",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "d663f1c83944cf8934f549ff879b51364f1a60ad",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "8b028b5c2d5e1caebec3fd870344d50f73fa8ec6",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "83cd375cd29060286a55c4667737099068db00e2",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "8bd813d6be4da9c16a6db1022c2957e47008df48",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "a21c3e353ad52ea34f76b908fa3382f656aa2449",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "070d494464288d65f2ac178785bb675387548d44",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "14f81d8d3455933cc1756cccc702cc83a7a1ac84",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "bd305f3f06f19d78cc1f0f2b6f454135c1f9f910",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "eca199d7b0db39f2e3595b2fe9d7cc4ff5d5730d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "789d0750215f3612642b3201ffccb42cc866d2ea",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "4677f0a255194f2644e86da95b5855ffe055614a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "08b1a09ee0cb39c93e3f88f4328d23705411775c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "c0087c9faff1f006640ebfac816129438280575b",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "e9bb359d3e85be944ae1f9c87a35ee9c0fdd3662",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "60fee0d67cee7b48c1f6ec8ed682b78d5f7fd0c3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "9b3d93293adde8f98f75886431202b636ceab004",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "d48006180c876aefd3385e6e78b76fa521139faa",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "c35d7fb835bf1bacff173e49960fedc4304d3c08",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "e2617c856eddb805b7b966319dad271ecaf5fb4c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "0a9be2db9b7bdf07cc60dd7f3bf814f384139040",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "cc1b420cfdd5066bc2c80c01971f567950c894e4",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "0308f91cd2f1da442700428eafe20fa1b787ef9d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "5aaf00f3f39848eb8fef768e3ec8c0e816a87172",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "7e1a8a90f8673c4e1d323728777eb6ce46f837a3",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "213d7b1ae3dc05a2df06f01d2dca0b58fa2747e9",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "fe36d461c2ef101b1c1047dfe43530bd87080f9d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "ced2ee821084bf00c99adab5ca34e1a2595f7ca1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "4ebc4e39d18020a97ff045b5f0f6da5ec430e252",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "145bae27596316cd6957f0303c5f18cd8318c361",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "430169a5ea96b7245964c094010675b03a3dbb32",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "930bce33dbcb7a9538e2f761fefaad4b7825d987",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "0f62b3024e8ad200ced653e15b9dd2fc2fbb8bb7",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "c47eaac9528de856e43aafddbef9b139d0831d8f",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "8e86c46be318428edbf898bc7f110587d0a2f9ef",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "4b19101fc33cb03e4d90b41ae05938c4bdfe145a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "d0928a3af32aa0e9ae4d500f1c14a318634ab93e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "474de3505327d6eb72a517957fa537f8d2dd8d5c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "e075271c178720199fe95ba6f3482bcb5ce12df7",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "3aff4011c735faa747ce94d20da6fd9f85144955",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "97ad0b1cd43527295159f2081be4d002be91f374",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 8,
+    "raw": "(Provavelmente sim, 8)"
+  },
+  {
+    "commit_hash": "983ec2cb4bf942a61c6130bce502007569d1403f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "d79b9a1b7a451747241b3c7a31e25f00322bfa84",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "7059464335fb6183a4bf9c5d798bcc36739eaf4d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "b05eddaaab86a845b4c9de10d9e69b633315b8af",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 25,
+    "raw": "(Provavelmente sim, 25)"
+  },
+  {
+    "commit_hash": "8f4865bdd722c1845f438178f653e2f2211f10b1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 62,
+    "raw": "(Provavelmente sim, 62)"
+  },
+  {
+    "commit_hash": "8d30b40843ff2352a97a4966305b1eb3a4ac48b5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "0295864514162361c30ca034e110223bb8ee20ef",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "d7e0e61d847d929dd3df67ecf16519beca990d69",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 30,
+    "raw": "(Provavelmente não, 30)"
+  },
+  {
+    "commit_hash": "84fc5c4aed74d22defba27170cbef0dec6a6261c",
+    "reflete_mudanca": "Não",
+    "qualidade": 40,
+    "raw": "(Não, 40)"
+  },
+  {
+    "commit_hash": "5a5cb300967416846c06982fa34fff9ad4900e6b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "b69359e2d75eabfa5fc405a8707e5a133019bbbf",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "645cc132769be1ad521d1b76a9bd121732fe6e07",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "ab179d6940ad9241fe0887b4c5e4664448ca3eb0",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "0f1802f00c8630060560035a2dfb9cbbf20e78c6",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "640fe03bcffcae0f7f37f2162923f99d6e0b25bd",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "3551ee097f104466a0a9e5a10aa97dad3092dbb1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 32,
+    "raw": "(Provavelmente sim, 32)"
+  },
+  {
+    "commit_hash": "a58825a4675626527a6fe944f18197518a6553fd",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "8de20a3aedbd2034a51ae039c8bbe2f3f1481b24",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6873af55cf15694f684b6040224a276397721f49",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6316f4d3db11678472430a3e406382faaad71da8",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "5266471a2f13f8bc2c65e9aa1f02e1a194c5c089",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "c64cc3228ac34f8f0c99a02d2fd595b14c583c59",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "bf9c9f716c049f6b4b07fc1f19ba2ee131d21bbc",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "6b00ec3713f6f6d4e7de54816345dcf4a7d16bd9",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "4469eb63a3796243978ea1fe674dec73bd774a42",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 8,
+    "raw": "(Provavelmente não, 8)"
+  },
+  {
+    "commit_hash": "e9182152ecf7411e24c04aa58d7de6a0421ea9a4",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "72c296dffcef9f0d19ebfbcc2c16bf74cd69128c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "30856a390457682db4f8577e9f5a7f8521839c6f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "3827555869f4072aeac261f63a676377e5b2d630",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "e4bd9127cb3e4f0eb8aa1b4fe5f4838011b4f2e5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "ed14f885122715bfc9bb2fefacd53e7a37a6553f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "98f5975cb0f87bd1bbdf40be4ad92f62112dbde0",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "12d5c30c8c0c848bee9a9d04efde6d90c59c8a50",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "2119b523c5cfc33c129f0c4adbebcfa1b8fbb8ed",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "6b2e7e12beaa69bd4fc76ea2f27e4c61b097d36b",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "bbd5c2178654b9a1b46011bd9b87c66cac66f046",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "d8949adc209f77f50b7c185722eff013200976d6",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "031f471f442bf8d139493db2d60913ce5d7b8eeb",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 18,
+    "raw": "(Provavelmente não, 18)"
+  },
+  {
+    "commit_hash": "499b13c99403a37ceec69d9cc4faec1c86b34e3c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "a1dd40905304bacfaf4a1bad6a45114e8ccc9e8d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "a544b605e25cf4dc8e107a697b8cc28c8132e125",
+    "reflete_mudanca": "Sim",
+    "qualidade": 42,
+    "raw": "(Sim, 42)"
+  },
+  {
+    "commit_hash": "8a0967a3b165803599b2bb39617bc55a1fcf52a0",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "cc19151e3bec266c32d7b878309550dfa92fe869",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "fcabd0753ce68424971db367abc4c52845ff7dde",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "439fb6c4fb10e4dfc4f8c2889c9b71b11d72bfba",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "9db64857e0bd31eee463e90c21aba52be8174726",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "84ef6aae18ab30ce0a1baec15962688216ccbbf1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "e9fd73ca4834732131ace223bd998939c3fe5e6c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "9453940a858be2da28f73f0e9ee2484468667b7c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "1fd402be54b93a0b7f175e27d8373ff678621b85",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "8adc838ff65e540df1902b7c326ee4a689a672f4",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "d876c2580352fad94a22e57792a12da9ec9b85dd",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "d7427e4802fd4d7108e37544115cab83c13172ab",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "98c7cb11dea7f0f91662ae6d4ec1fd13b8f9e553",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "3d24e75176cf93a109392e9a9449b47c9dc58330",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "7e46348e6219f7b827fd315140437a8abfa0226f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 18,
+    "raw": "(Provavelmente sim, 18)"
+  },
+  {
+    "commit_hash": "ef06ec61e6f827dd1b2bf269c2e5ad8aa9b91e0e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "7015dfef4babdc2cce655baf24c1b2b741864a60",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "c487962dd7df883eaaba46a0697097c66c7ba781",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "b8476a09fe83f83050a528bd9ca10d37fdf3a727",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "b34c8ec3ec8385043f7542bc886a13230d95ca14",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "0e8ac82c6374e2028d165b4045338d49e1629f4c",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "49459d85a9a24193c9195316509131e49f0b2a02",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "81dc2019217bb5706735d95531d6bab6aebd0834",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "98018c4b93073ae7afb705a9ad93d461fbf07aa1",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "d57753efd45c9177bcdfda2b5857a79e66f4cce7",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "91d983aa1140e3ae109684ff7c916583ed059e0e",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 15,
+    "raw": "(Provavelmente não, 15)"
+  },
+  {
+    "commit_hash": "0e91367109fd52376f6a56412f7b095128686685",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "8a02b22e89dacb292f4737e97d90c1a2c748b8b5",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "0ff43badd540f376cebbde641ab1f805a98f6200",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "0427469f57a256f99d2766a443b969385e737369",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "2df6bba3ca3343f8ed8283f0974e5c0089280cba",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "f1f01a70f9ab16fcfe48c4dbbee2c999b3f8fd79",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "7a335784363b7447d1da26b11878f8e105f9fbca",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "6159ba3ab12c1aed7729497ed8a03b6a0a915f43",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "79f99a3888ab3e6a934da47b36d912f9723e1415",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 25,
+    "raw": "(Provavelmente sim, 25)"
+  },
+  {
+    "commit_hash": "dd26bef4ef8ba3674bed08ba0efdade21e751cd5",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "2bfc73f55e6ded7dc2933e4f1c46c7a5d809b494",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "c18ed2f5a76a654c783d804ce7beef791bdfa394",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "bced35f1e16a0b5a5086b4b94f8155645a89494a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "d85a5420f71e979193619a7b62b3ab269c2db9cd",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "0f582cee86169db085d1052f5827de9175982a10",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "c10908e0d26531cdb5431adc1c8fd779fd8ee63a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "e3f2eb1f398041645817f5abeb1d695547a7cf92",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "4eb1ee294d8197a04b185905264fb76f186db08b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "fe0154ba8733c19d97d5c688d7ec12f5a32ed4f5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 32,
+    "raw": "(Provavelmente sim, 32)"
+  },
+  {
+    "commit_hash": "ec9d5d71ec4cec1f92292fd2dcfa4a6d4093a05d",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "b33f080c264f440bb5ee22abc3194b8700d4975d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 20,
+    "raw": "(Provavelmente sim, 20)"
+  },
+  {
+    "commit_hash": "2535fcde2a8a56159ed90b0debc05cf3be06ac35",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "1e3c5b0ab5408e7b2fbad71c1137414bc7ae1f78",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "1e7fed7fd9b6e55f012ef1e48e1f8bfb53a3102b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "a3f1c3673fb56752ebb1c6d9bab0706e7f8ae7ac",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "91840733243fe88cad1fe5c88eb7b0cc4db42cfc",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "7fab67a8ac94bbedb1cdeaed8cd57c1bd8668fa8",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 18,
+    "raw": "(Provavelmente sim, 18)"
+  },
+  {
+    "commit_hash": "a04dcc9137ba7cfe903c9ebffe507f85b199aee4",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "b59e20db1ac66e960d69a19a3bfd11e83c1d9eef",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "581166da91da1652142f32a785f7d1a737ae57ba",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "64ebb583bc293669f4123014736d635711c73ba9",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "9a550134036fa4a472d3feb90a4ad9a946b06483",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "9540d9786e3b82ba1882d1ed4719cbd03adef7cd",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "856da1e65a9e7d6381771d31f54fe9ee8c021592",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "a35a681f974f50d6ddeff62b9519766a1b20822a",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "e4fd53464512a9641d3f9e15023ee29d5d7b73b5",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "3ae4edb24518e7e7154752b247273139f8d10766",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "0b4620b57561c92b436be7c12a83ab0f51b54593",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 10,
+    "raw": "(Provavelmente não, 10)"
+  },
+  {
+    "commit_hash": "5cf1964fc6ba29db4119157410217ca98c5cc6ba",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "19ba2292993933947b72da984580cf885179128b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 22,
+    "raw": "(Provavelmente sim, 22)"
+  },
+  {
+    "commit_hash": "20ef87171c86213eb64d47ba5b9fc0d4ddbf0d19",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "2c2b98385a29e24d33e4b57076319ee31982826e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "f139617b553e87f4b2a49542ab9b3b74a7348a1b",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "1a6de0760d5e2593e1b12a665923ca83134c109e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "b0571ebf65a9d9772a8ac0a0e231477fb36859dc",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "9ed7a21ba60604031986f056a29e99ab4b979921",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "6a9627e792274eb1fcd8f47915ab7a03b05ef941",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "2d87654aeb8aa541a122ce32c484ab2f917119a0",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "31a925c4d07675bc098a742ee9ca642ec79a40ee",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "b64a7549b4c2e459e1d64b1d5cc94f4f5998f503",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "e4135ad17e51fa4e5b884c76cff8608e219fa2c7",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "4799bb8d33731ddd0426a10858155729a369b599",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 18,
+    "raw": "(Provavelmente não, 18)"
+  },
+  {
+    "commit_hash": "cc494cebbbacf044f81cf439596faa4f78c90e9d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "c530fbfb2fa4177103a44147315a3217c6527dd6",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "d705aa813670d0dfab7b6f444609c5629cc4b008",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "e98df1ab2955f9c2d57e7f97db569c5ac44375a3",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "59203450688554f2b63e1ccf2894e033b20f4c01",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "ee85fda2ad9a71a148b0e984a50811e1607eeb20",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "2b3bb341fe6c9f56154436aa90c9c4ef1e4d645c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 78,
+    "raw": "(Sim, 78)"
+  },
+  {
+    "commit_hash": "0d8a7dc6a4fce29d36998c4829007baa7af7d3ef",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "f07c7bf4e757b27b5079e40375f2179187e14bc6",
+    "reflete_mudanca": "Sim",
+    "qualidade": 85,
+    "raw": "(Sim, 85)"
+  },
+  {
+    "commit_hash": "ef0eecfa1f36cf85cef838fbcc7ed13b42c274e2",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "01ecb2e3a03195c65d1ea55bfc9b4a47f632baec",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 42,
+    "raw": "(Provavelmente sim, 42)"
+  },
+  {
+    "commit_hash": "8dc48ba8772bff315fc0e6cd200fbcc2d0cd5776",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "bb80f8a918f88544df540b730d40c432321e8cde",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "e83621aa13795d6f9557c961e611d943aa5bec88",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 15,
+    "raw": "(Provavelmente não, 15)"
+  },
+  {
+    "commit_hash": "323fefdb9d073804d7424427028bdd29f5bdd47a",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "72098f38031a0bdfae39ad9f39da1861b5b3f034",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "5bdda53f129789850218937dc1af48d3015139a9",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "1af6b56427fa5afbca88849c428bc872d60ad941",
+    "reflete_mudanca": "Sim",
+    "qualidade": 82,
+    "raw": "(Sim, 82)"
+  },
+  {
+    "commit_hash": "5e202d8586b32b07217bd471036209aa73af67f5",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "a9ed49d5b5661626280fca3f45c3d8ae3f9b69e4",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "65b5eb5add60bc28db2035c1162d61a38ee011de",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "f9322c66d3cc06b011c087e6016c461d0e78648e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "2e12331d42610e6489de85b5ca18644c0bf11f14",
+    "reflete_mudanca": "Sim",
+    "qualidade": 72,
+    "raw": "(Sim, 72)"
+  },
+  {
+    "commit_hash": "14257ee2c6cd906af97b7336598cbebe2f4f70fe",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "9afe03355a8daa58e55ba34f7e6eee5f0a73c737",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 18,
+    "raw": "(Provavelmente não, 18)"
+  },
+  {
+    "commit_hash": "d4a95fd7ab5f3294eec134bf970fb01a5be2c950",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "de75f9ef492c7bea77deed74577e5e621f124721",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "95aa15f32a123ecd084f564e36a4051a353bcb4e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "982c695fbd33aaabdbcb546f78ed475bdd474ea2",
+    "reflete_mudanca": "Sim",
+    "qualidade": 82,
+    "raw": "(Sim, 82)"
+  },
+  {
+    "commit_hash": "2af0d090f1bb26111ee19e5ab40ae00ed46313fb",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 28,
+    "raw": "(Provavelmente sim, 28)"
+  },
+  {
+    "commit_hash": "683333644d1ca374e208a2174910c42e19134b1e",
+    "reflete_mudanca": "Sim",
+    "qualidade": 52,
+    "raw": "(Sim, 52)"
+  },
+  {
+    "commit_hash": "3984f0eeb243f0ae3eaceef3a8dcf2ee238d732e",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "62222925826cea2f75c62c348ac284bc462e74e0",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "329083a97e2b5de1191f50451a253c224c833605",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "d2404c17c9df0b187a95f5674d18438d3e4d717f",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 62,
+    "raw": "(Provavelmente sim, 62)"
+  },
+  {
+    "commit_hash": "2e6159311ace7a0bdbc82bdb3c537ba16aea5e4d",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 30,
+    "raw": "(Provavelmente sim, 30)"
+  },
+  {
+    "commit_hash": "1572800b1610dd5f0aef6f273bdc75daf93c5709",
+    "reflete_mudanca": "Sim",
+    "qualidade": 40,
+    "raw": "(Sim, 40)"
+  },
+  {
+    "commit_hash": "0957e08ac35670ea98b394f631f17795d752283c",
+    "reflete_mudanca": "Sim",
+    "qualidade": 62,
+    "raw": "(Sim, 62)"
+  },
+  {
+    "commit_hash": "b206958d13d29d2ab2ebd8f0dbd94674402ec4cf",
+    "reflete_mudanca": "Provavelmente não",
+    "qualidade": 12,
+    "raw": "(Provavelmente não, 12)"
+  },
+  {
+    "commit_hash": "3912b757050b5380939a474f1e244f5ce5c411f0",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "cb8539f9be6ce6dca18a6a5cdbc69439d2e919ce",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  },
+  {
+    "commit_hash": "be1d4719b44b7577c835802ccbd5bd41a694ca74",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 40,
+    "raw": "(Provavelmente sim, 40)"
+  },
+  {
+    "commit_hash": "d3d541996b52f6170c2613129e8b8be2b0411943",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 35,
+    "raw": "(Provavelmente sim, 35)"
+  },
+  {
+    "commit_hash": "1e88d82462962df4f9082e1f4f0b8268d10e8573",
+    "reflete_mudanca": "Provavelmente sim",
+    "qualidade": 52,
+    "raw": "(Provavelmente sim, 52)"
+  }
+]
