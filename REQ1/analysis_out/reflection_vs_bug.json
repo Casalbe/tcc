@@ -1,0 +1,191 @@
+{
+  "model": "logreg",
+  "labels": [
+    "Não",
+    "Provavelmente não",
+    "Provavelmente sim",
+    "Sim"
+  ],
+  "splits": {
+    "train": {
+      "n": 5000,
+      "n_clean": 2500,
+      "n_defect_inducing": 2500,
+      "distribution_total": {
+        "Provavelmente sim": 1080,
+        "Provavelmente não": 1802,
+        "Sim": 1997,
+        "Não": 121
+      },
+      "distribution_bug": {
+        "Sim": 1138,
+        "Provavelmente não": 680,
+        "Provavelmente sim": 635,
+        "Não": 47
+      },
+      "distribution_clean": {
+        "Provavelmente sim": 445,
+        "Provavelmente não": 1122,
+        "Sim": 859,
+        "Não": 74
+      },
+      "contingency_table": {
+        "rows": [
+          "clean",
+          "defect_inducing"
+        ],
+        "cols": [
+          "Não",
+          "Provavelmente não",
+          "Provavelmente sim",
+          "Sim"
+        ],
+        "values": [
+          [
+            74,
+            1122,
+            445,
+            859
+          ],
+          [
+            47,
+            680,
+            635,
+            1138
+          ]
+        ]
+      },
+      "chi_square": {
+        "chi2": 186.84478210665736,
+        "p_value": 2.931957084540711e-40,
+        "dof": 3,
+        "expected": [
+          [
+            60.5,
+            901.0,
+            540.0,
+            998.5
+          ],
+          [
+            60.5,
+            901.0,
+            540.0,
+            998.5
+          ]
+        ]
+      },
+      "chi_square_input": {
+        "cols": [
+          "Não",
+          "Provavelmente não",
+          "Provavelmente sim",
+          "Sim"
+        ],
+        "values": [
+          [
+            74,
+            1122,
+            445,
+            859
+          ],
+          [
+            47,
+            680,
+            635,
+            1138
+          ]
+        ]
+      }
+    },
+    "test": {
+      "n": 5000,
+      "n_clean": 2500,
+      "n_defect_inducing": 2500,
+      "distribution_total": {
+        "Provavelmente sim": 1202,
+        "Provavelmente não": 1914,
+        "Não": 123,
+        "Sim": 1761
+      },
+      "distribution_bug": {
+        "Provavelmente não": 801,
+        "Provavelmente sim": 754,
+        "Sim": 901,
+        "Não": 44
+      },
+      "distribution_clean": {
+        "Provavelmente sim": 448,
+        "Provavelmente não": 1113,
+        "Não": 79,
+        "Sim": 860
+      },
+      "contingency_table": {
+        "rows": [
+          "clean",
+          "defect_inducing"
+        ],
+        "cols": [
+          "Não",
+          "Provavelmente não",
+          "Provavelmente sim",
+          "Sim"
+        ],
+        "values": [
+          [
+            79,
+            1113,
+            448,
+            860
+          ],
+          [
+            44,
+            801,
+            754,
+            901
+          ]
+        ]
+      },
+      "chi_square": {
+        "chi2": 139.67302141845198,
+        "p_value": 4.445920894591054e-30,
+        "dof": 3,
+        "expected": [
+          [
+            61.5,
+            957.0,
+            601.0,
+            880.5
+          ],
+          [
+            61.5,
+            957.0,
+            601.0,
+            880.5
+          ]
+        ]
+      },
+      "chi_square_input": {
+        "cols": [
+          "Não",
+          "Provavelmente não",
+          "Provavelmente sim",
+          "Sim"
+        ],
+        "values": [
+          [
+            79,
+            1113,
+            448,
+            860
+          ],
+          [
+            44,
+            801,
+            754,
+            901
+          ]
+        ]
+      }
+    }
+  }
+}
