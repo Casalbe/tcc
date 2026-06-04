@@ -1,0 +1,6 @@
+answer,total_teste,qtd_erros,qtd_acertos,taxa_erro,acuracia,recall
+Sim,1035,253,782,0.2444,0.7556,0.7556
+Provavelmente sim,790,112,678,0.1418,0.8582,0.8582
+Provavelmente não,56,0,56,0.0,1.0,1.0
+Não,4,0,4,0.0,1.0,1.0
+TOTAL,2000,365,1635,0.1825,0.8175,0.9034
