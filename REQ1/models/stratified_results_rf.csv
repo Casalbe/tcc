@@ -1,0 +1,5 @@
+reflete_mudanca,total_teste,qtd_erros,qtd_acertos,taxa_erro,acuracia,recall_classe_0,recall_classe_1
+Sim,1791,774,1017,0.4322,0.5678,0.7148,0.5079
+Provavelmente sim,1484,648,836,0.4367,0.5633,0.6706,0.5318
+Provavelmente não,94,49,45,0.5213,0.4787,0.6296,0.4179
+Não,7,3,4,0.4286,0.5714,1.0,0.4
