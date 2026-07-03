@@ -1,0 +1,5 @@
+reflete_mudanca,total,acertos,erros,taxa_acerto,taxa_erro,recall_clean,recall_bug
+Sim,546,476,70,0.8718,0.1282,0.871,0.8721
+Provavelmente sim,444,395,49,0.8896,0.1104,0.8091,0.9162
+Provavelmente não,27,25,2,0.9259,0.0741,0.8333,0.9524
+Não,1,1,0,1.0,0.0,,1.0

@@ -1,0 +1,78 @@
+==============================================================================
+TESTES ESTATÍSTICOS PAREADOS — Random Forest vs Logistic Regression
+==============================================================================
+Comparação: Random Forest (A) vs Logistic Regression (B)
+Pareamento: mesmo seed → mesmo split treino/teste em ambos os modelos.
+H0 (Wilcoxon/teste t): não há diferença sistemática entre A e B na métrica.
+
+--- best_cv_score ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8368
+  média B (LogisticRegression ): 0.6942
+  diferença média (A-B): +0.1426 (desvio: 0.0069)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=111.772  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- accuracy ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8381
+  média B (LogisticRegression ): 0.6943
+  diferença média (A-B): +0.1438 (desvio: 0.0101)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=76.966  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- precision_bug ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8150
+  média B (LogisticRegression ): 0.6922
+  diferença média (A-B): +0.1227 (desvio: 0.0101)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=65.611  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- recall_bug ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8752
+  média B (LogisticRegression ): 0.6997
+  diferença média (A-B): +0.1755 (desvio: 0.0187)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=50.578  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- f1_bug ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8439
+  média B (LogisticRegression ): 0.6958
+  diferença média (A-B): +0.1481 (desvio: 0.0117)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=68.024  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- precision_clean ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8653
+  média B (LogisticRegression ): 0.6966
+  diferença média (A-B): +0.1688 (desvio: 0.0144)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=63.165  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- recall_clean ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8010
+  média B (LogisticRegression ): 0.6888
+  diferença média (A-B): +0.1122 (desvio: 0.0128)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=47.223  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)
+
+--- f1_clean ---
+  n pares (seeds)      : 30
+  média A (RandomForest       ): 0.8318
+  média B (LogisticRegression ): 0.6926
+  diferença média (A-B): +0.1392 (desvio: 0.0093)
+  Wilcoxon signed-rank : stat=0.000  p=0.0000
+  Teste t pareado      : stat=80.961  p=0.0000
+  Diferença significativa a 5%? SIM (p < 0.05)

@@ -1,0 +1,5 @@
+reflete_mudanca,total_bug,acertos (pred=1),erros   (pred=0),taxa_acerto,taxa_erro
+Sim,391,341,50,0.8721,0.1279
+Provavelmente sim,334,306,28,0.9162,0.0838
+Provavelmente não,21,20,1,0.9524,0.0476
+Não,1,1,0,1.0,0.0
