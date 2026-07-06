@@ -12,6 +12,7 @@ estatística justa entre os dois modelos.
 
 import json
 import sys
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -30,6 +31,12 @@ NUMERIC_FEATURES = [
 ]
 
 REFLETE_ORDER = ["Sim", "Provavelmente sim", "Provavelmente não", "Não"]
+REFLETE_SCORE = {
+    "Sim": 3,
+    "Provavelmente sim": 2,
+    "Provavelmente não": 1,
+    "Não": 0,
+}
 
 TEST_SIZE = 0.30
 
@@ -59,6 +66,37 @@ def contains_bug_label(record: dict) -> int:
 def gmean_recall(y_true, y_pred) -> float:
     recalls = recall_score(y_true, y_pred, average=None, zero_division=0)
     return float(np.sqrt(np.prod(recalls)))
+
+
+def _strip_accents(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text)
+    return "".join(ch for ch in normalized if not unicodedata.combining(ch))
+
+
+def normalize_reflete_mudanca(value) -> str | None:
+    if value is None:
+        return None
+
+    text = " ".join(str(value).strip().split())
+    if not text:
+        return None
+
+    key = _strip_accents(text).lower()
+    mapping = {
+        "sim": "Sim",
+        "provavelmente sim": "Provavelmente sim",
+        "provavelmente nao": "Provavelmente não",
+        "nao": "Não",
+        "sem mensagem": "Sem mensagem",
+    }
+    return mapping.get(key, text)
+
+
+def reflete_to_score(value) -> int | None:
+    label = normalize_reflete_mudanca(value)
+    if label is None:
+        return None
+    return REFLETE_SCORE.get(label)
 
 # ─── Data Loading ─────────────────────────────────────────────────────────────
 
@@ -116,3 +154,28 @@ def stratified_split(df: pd.DataFrame, seed: int, test_size: float = TEST_SIZE):
 
 def build_feature_matrix(df: pd.DataFrame) -> np.ndarray:
     return df[NUMERIC_FEATURES].values.astype(np.float32)
+
+
+def build_prediction_log(df: pd.DataFrame, model: str, seed: int, y_proba) -> pd.DataFrame:
+    rows = []
+    for idx, (_, row) in enumerate(df.iterrows()):
+        rows.append({
+            "model": model,
+            "seed": seed,
+            "commit_hash": row.get("commit_hash", ""),
+            "repo": row.get("repo", ""),
+            "label": int(row["label"]),
+            "pred": int(row["pred"]),
+            "pred_bug_proba": float(y_proba[idx]) if y_proba is not None else float("nan"),
+            "correct": int(int(row["label"]) == int(row["pred"])),
+            "reflete_mudanca": row.get("reflete_mudanca"),
+            "reflete_score": reflete_to_score(row.get("reflete_mudanca")),
+        })
+    return pd.DataFrame(rows)
+
+
+def append_prediction_log(df: pd.DataFrame, model: str, seed: int, y_proba, out_path: Path) -> None:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    log_df = build_prediction_log(df, model, seed, y_proba)
+    write_header = not out_path.exists()
+    log_df.to_csv(out_path, mode="a", header=write_header, index=False)

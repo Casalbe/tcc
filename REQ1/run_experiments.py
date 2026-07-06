@@ -39,6 +39,7 @@ RESULTS_DIR = Path("results")
 RESULTS_DIR.mkdir(exist_ok=True)
 
 RESULTS_CSV = RESULTS_DIR / "all_runs.csv"
+PREDICTIONS_CSV = RESULTS_DIR / "test_predictions.csv"
 ERROR_LOG   = RESULTS_DIR / "errors.log"
 
 DEFAULT_N_RUNS    = 30
@@ -46,7 +47,7 @@ DEFAULT_SEED_BASE = 1  # seeds = SEED_BASE, SEED_BASE+1, ..., SEED_BASE+N_RUNS-1
 
 # Colunas fixas no início do CSV, na ordem em que aparecem; o resto das
 # métricas (que vem de compute_metrics) é appended dinamicamente.
-KEY_COLUMNS = ["model", "seed", "n_train", "n_test", "best_cv_score", "elapsed_sec"]
+KEY_COLUMNS = ["model", "seed", "n_train", "n_test", "elapsed_sec"]
 
 
 def load_existing_results() -> pd.DataFrame:
@@ -69,6 +70,9 @@ def append_result(result: dict):
         row_df["best_params"] = row_df["best_params"].astype(str)
 
     write_header = not RESULTS_CSV.exists()
+    if not write_header:
+        existing_cols = list(pd.read_csv(RESULTS_CSV, nrows=0).columns)
+        row_df = row_df.reindex(columns=existing_cols)
     row_df.to_csv(RESULTS_CSV, mode="a", header=write_header, index=False)
 
 
@@ -114,7 +118,12 @@ def run_all(n_runs: int, seed_base: int, only: str | None):
             print(f"{tag}  ▶ rodando …", flush=True)
             t0 = time.perf_counter()
             try:
-                result = module.run_experiment(seed=seed, verbose=False, save_model=False)
+                result = module.run_experiment(
+                    seed=seed,
+                    verbose=False,
+                    save_model=False,
+                    prediction_log_path=PREDICTIONS_CSV,
+                )
                 elapsed = time.perf_counter() - t0
                 append_result(result)
                 # Mantém o DataFrame em memória atualizado para já-feitos
@@ -122,7 +131,6 @@ def run_all(n_runs: int, seed_base: int, only: str | None):
 
                 print(
                     f"{tag}  ✓ {elapsed:6.1f}s"
-                    f"  | acc={result['accuracy']:.4f}"
                     f"  f1_bug={result['f1_bug']:.4f}"
                     f"  recall_bug={result['recall_bug']:.4f}"
                     f"  gmean={result['gmean_recall']:.4f}"
@@ -148,7 +156,16 @@ def summarize():
     df = pd.read_csv(RESULTS_CSV)
     metric_cols = [
         c for c in df.columns
-        if c not in ("model", "seed", "n_train", "n_test", "best_params", "elapsed_sec")
+        if c not in (
+            "model",
+            "seed",
+            "n_train",
+            "n_test",
+            "best_params",
+            "elapsed_sec",
+            "accuracy",
+            "best_cv_score",
+        )
     ]
 
     print("\n" + "=" * 90)

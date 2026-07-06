@@ -1,0 +1,23 @@
+==============================================================================
+QUALIDADE DA MENSAGEM DE COMMIT VS SAÍDA DO MODELO
+==============================================================================
+Pontuação ordinal da qualidade: Não=0, Provavelmente não=1, Provavelmente sim=2, Sim=3.
+A análise principal usa commits defect-inducing e resume a variação por seed.
+
+--- Random Forest ---
+  all_annotated: rho(qualidade, prob_bug) = -0.0871 ± 0.0208 | rho(qualidade, acerto) = -0.0240 ± 0.0371
+  bug_inducing_only: rho(qualidade, prob_bug) = -0.0625 ± 0.0255 | rho(qualidade, acerto) = -0.0521 ± 0.0398
+  Por classe de reflexão (somente defect-inducing):
+    Não                prob_bug=0.6330 ± 0.1075 | fnr=0.2284 ± 0.2817
+    Provavelmente não  prob_bug=0.7366 ± 0.0354 | fnr=0.1034 ± 0.0728
+    Provavelmente sim  prob_bug=0.7430 ± 0.0114 | fnr=0.1060 ± 0.0176
+    Sim                prob_bug=0.7161 ± 0.0112 | fnr=0.1419 ± 0.0180
+
+--- Logistic Regression ---
+  all_annotated: rho(qualidade, prob_bug) = -0.0210 ± 0.0290 | rho(qualidade, acerto) = +0.0130 ± 0.0345
+  bug_inducing_only: rho(qualidade, prob_bug) = +0.0101 ± 0.0343 | rho(qualidade, acerto) = +0.0167 ± 0.0363
+  Por classe de reflexão (somente defect-inducing):
+    Não                prob_bug=0.6635 ± 0.1708 | fnr=0.4846 ± 0.3611
+    Provavelmente não  prob_bug=0.5640 ± 0.0353 | fnr=0.4285 ± 0.1186
+    Provavelmente sim  prob_bug=0.6067 ± 0.0102 | fnr=0.2955 ± 0.0263
+    Sim                prob_bug=0.6072 ± 0.0081 | fnr=0.2960 ± 0.0212

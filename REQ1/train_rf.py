@@ -25,7 +25,6 @@ from sklearn.model_selection import (
     cross_val_score,
 )
 from sklearn.metrics import (
-    accuracy_score,
     classification_report,
     confusion_matrix,
     f1_score,
@@ -36,6 +35,7 @@ from sklearn.metrics import (
 )
 
 from common import (
+    append_prediction_log,
     NUMERIC_FEATURES,
     REFLETE_ORDER,
     TRAIN_DIR,
@@ -200,7 +200,6 @@ def _print_report(y_true, y_pred, title: str):
 def compute_metrics(y_true, y_pred, y_proba=None) -> dict:
     """Métricas-resumo de uma run, usadas na tabela final de 30 execuções."""
     metrics = {
-        "accuracy":        accuracy_score(y_true, y_pred),
         "precision_bug":   precision_score(y_true, y_pred, pos_label=1, zero_division=0),
         "recall_bug":      recall_score(y_true, y_pred, pos_label=1, zero_division=0),
         "f1_bug":          f1_score(y_true, y_pred, pos_label=1, zero_division=0),
@@ -313,7 +312,12 @@ def stratified_report(test_df: pd.DataFrame, verbose: bool = True):
 
 # ─── Single-seed experiment entry point (used by run_experiments.py) ─────────
 
-def run_experiment(seed: int, verbose: bool = False, save_model: bool = False):
+def run_experiment(
+    seed: int,
+    verbose: bool = False,
+    save_model: bool = False,
+    prediction_log_path: Path | None = None,
+):
     """
     Executa um ciclo completo (load → shuffle → split → tune → eval) com
     um único seed controlando TUDO (shuffle do dataset, split train/test,
@@ -342,6 +346,9 @@ def run_experiment(seed: int, verbose: bool = False, save_model: bool = False):
     metrics = compute_metrics(test_df["label"].values, test_df["pred"].values, y_proba)
     elapsed = time.perf_counter() - t0
 
+    if prediction_log_path is not None:
+        append_prediction_log(test_df, "RandomForest", seed, y_proba, prediction_log_path)
+
     if verbose:
         test_performance_report_inline(test_df["label"].values, test_df["pred"].values)
         feat_df = feature_importance_report(clf)
@@ -355,7 +362,6 @@ def run_experiment(seed: int, verbose: bool = False, save_model: bool = False):
         "n_train":        len(train_df),
         "n_test":         len(test_df),
         "best_params":    best_params,
-        "best_cv_score":  best_cv_score,
         "elapsed_sec":    elapsed,
         **metrics,
     }

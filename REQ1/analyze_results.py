@@ -6,17 +6,20 @@ Lê:
   - results/summary_by_model.csv (1 linha por modelo: médias agregadas)
 
 Gera, em results/figures/:
-  01_overview_bar_means.png        — médias das 8 métricas (summary CSV)
-  02_boxplots_grid.png             — boxplots por métrica, RF vs LR (all_runs)
+    01_overview_bar_means.png        — média ± desvio padrão das 6 métricas (summary CSV)
+    02_boxplots_grid.png             — boxplots por métrica, RF vs LR (all_runs)
   03_class_comparison_rf.png       — bug vs clean dentro do RF (P/R/F1)
   04_class_comparison_lr.png       — bug vs clean dentro do LR (P/R/F1)
   05_class_comparison_grouped.png  — bug vs clean, RF e LR juntos
   06_paired_differences.png        — diferença pareada (RF-LR) por seed
-  07_radar_comparison.png          — radar das 8 métricas, RF vs LR
+    07_radar_comparison.png          — radar das 6 métricas, RF vs LR
+    08_quality_prediction_link.png   — qualidade da mensagem vs saída do modelo
 
   comparison_report.pdf            — todas as figuras acima, em um PDF único
-  statistical_tests.csv            — Wilcoxon pareado + teste t pareado por métrica
-  statistical_tests.txt            — mesmo conteúdo, formatado para leitura/colar na tese
+    statistical_tests.csv            — Wilcoxon pareado + teste t pareado por métrica
+    statistical_tests.txt            — mesmo conteúdo, formatado para leitura/colar na tese
+    quality_correlation.csv          — correlação da qualidade da mensagem com as predições
+    quality_correlation.txt          — resumo textual da correlação
 
 Uso:
     python analyze_results.py
@@ -35,14 +38,14 @@ import pandas as pd
 from matplotlib.backends.backend_pdf import PdfPages
 from scipy import stats
 
+from common import normalize_reflete_mudanca, reflete_to_score
+
 warnings.filterwarnings("ignore")
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 
-# Apenas estas 8 métricas devem ser usadas, conforme solicitado.
+# Apenas estas 6 métricas entram na análise final; CV e accuracy foram removidos.
 METRICS = [
-    "best_cv_score",
-    "accuracy",
     "precision_bug",
     "recall_bug",
     "f1_bug",
@@ -52,8 +55,6 @@ METRICS = [
 ]
 
 METRIC_LABELS = {
-    "best_cv_score":    "Best CV Score\n(gmean recall)",
-    "accuracy":         "Accuracy",
     "precision_bug":    "Precision\n(bug-inducing)",
     "recall_bug":       "Recall\n(bug-inducing)",
     "f1_bug":           "F1-score\n(bug-inducing)",
@@ -65,6 +66,14 @@ METRIC_LABELS = {
 MODEL_ORDER  = ["RandomForest", "LogisticRegression"]
 MODEL_LABELS = {"RandomForest": "Random Forest", "LogisticRegression": "Logistic Regression"}
 MODEL_COLORS = {"RandomForest": "#2E7D32", "LogisticRegression": "#1565C0"}
+
+REFLETE_PLOT_ORDER = ["Não", "Provavelmente não", "Provavelmente sim", "Sim"]
+REFLETE_COLORS = {
+    "Não": "#B71C1C",
+    "Provavelmente não": "#E53935",
+    "Provavelmente sim": "#FB8C00",
+    "Sim": "#2E7D32",
+}
 
 CLASS_METRICS = {
     "bug-inducing": ["precision_bug", "recall_bug", "f1_bug"],
@@ -93,6 +102,7 @@ plt.rcParams.update({
 def load_data(results_dir: Path):
     all_runs_path = results_dir / "all_runs.csv"
     summary_path  = results_dir / "summary_by_model.csv"
+    predictions_path = results_dir / "test_predictions.csv"
 
     for p in (all_runs_path, summary_path):
         if not p.exists():
@@ -100,13 +110,15 @@ def load_data(results_dir: Path):
 
     all_runs = pd.read_csv(all_runs_path, sep=",")
     summary  = pd.read_csv(summary_path, sep=",")
+    predictions = pd.read_csv(predictions_path, sep=",") if predictions_path.exists() else None
 
     missing_in_runs = [m for m in METRICS if m not in all_runs.columns]
     if missing_in_runs:
         raise SystemExit(f"[ERROR] Colunas ausentes em all_runs.csv: {missing_in_runs}")
 
     mean_cols = [f"{m}_mean" for m in METRICS]
-    missing_in_summary = [c for c in mean_cols if c not in summary.columns]
+    std_cols = [f"{m}_std" for m in METRICS]
+    missing_in_summary = [c for c in mean_cols + std_cols if c not in summary.columns]
     if missing_in_summary:
         raise SystemExit(f"[ERROR] Colunas ausentes em summary_by_model.csv: {missing_in_summary}")
 
@@ -114,7 +126,10 @@ def load_data(results_dir: Path):
     if len(present_models) < 2:
         print(f"[WARNING] Esperava 2 modelos, encontrou: {present_models}")
 
-    return all_runs, summary, present_models
+    if predictions is None:
+        print(f"[WARNING] Arquivo não encontrado: {predictions_path} — análise de reflete_mudanca será pulada.")
+
+    return all_runs, summary, predictions, present_models
 
 
 def get_paired_wide(all_runs: pd.DataFrame, metric: str, models) -> pd.DataFrame:
@@ -124,6 +139,108 @@ def get_paired_wide(all_runs: pd.DataFrame, metric: str, models) -> pd.DataFrame
     wide = sub.pivot(index="seed", columns="model", values=metric)
     wide = wide.dropna(subset=models)
     return wide
+
+
+def _prepare_prediction_log(predictions: pd.DataFrame) -> pd.DataFrame:
+    df = predictions.copy()
+    df["reflete_mudanca"] = df["reflete_mudanca"].map(normalize_reflete_mudanca)
+    df["reflete_score"] = df["reflete_mudanca"].map(reflete_to_score)
+    df = df[df["reflete_score"].notna()].copy()
+    df["reflete_score"] = df["reflete_score"].astype(int)
+    df["correct"] = df["correct"].astype(int)
+    df["label"] = df["label"].astype(int)
+    df["pred"] = df["pred"].astype(int)
+    df["pred_bug_proba"] = df["pred_bug_proba"].astype(float)
+    return df
+
+
+def summarize_quality_correlations(predictions: pd.DataFrame, models) -> pd.DataFrame:
+    rows = []
+
+    for model in models:
+        model_df = predictions[predictions["model"] == model].copy()
+        if model_df.empty:
+            continue
+
+        scopes = {
+            "all_annotated": model_df,
+            "bug_inducing_only": model_df[model_df["label"] == 1],
+        }
+
+        for scope_name, scope_df in scopes.items():
+            if scope_df.empty:
+                continue
+
+            per_seed_rows = []
+            for seed, seed_df in scope_df.groupby("seed"):
+                if seed_df["reflete_score"].nunique() < 2:
+                    continue
+
+                rho_prob, p_prob = stats.spearmanr(seed_df["reflete_score"], seed_df["pred_bug_proba"])
+                rho_correct, p_correct = stats.spearmanr(seed_df["reflete_score"], seed_df["correct"])
+
+                per_seed_rows.append({
+                    "model": model,
+                    "scope": scope_name,
+                    "seed": seed,
+                    "n_rows": len(seed_df),
+                    "rho_quality_vs_pred_bug_proba": rho_prob,
+                    "p_quality_vs_pred_bug_proba": p_prob,
+                    "rho_quality_vs_correct": rho_correct,
+                    "p_quality_vs_correct": p_correct,
+                })
+
+            if not per_seed_rows:
+                continue
+
+            per_seed = pd.DataFrame(per_seed_rows)
+            rows.append({
+                "model": model,
+                "scope": scope_name,
+                "n_seeds": len(per_seed),
+                "n_rows": int(per_seed["n_rows"].sum()),
+                "mean_rho_quality_vs_pred_bug_proba": per_seed["rho_quality_vs_pred_bug_proba"].mean(),
+                "std_rho_quality_vs_pred_bug_proba": per_seed["rho_quality_vs_pred_bug_proba"].std(),
+                "mean_p_quality_vs_pred_bug_proba": per_seed["p_quality_vs_pred_bug_proba"].mean(),
+                "mean_rho_quality_vs_correct": per_seed["rho_quality_vs_correct"].mean(),
+                "std_rho_quality_vs_correct": per_seed["rho_quality_vs_correct"].std(),
+                "mean_p_quality_vs_correct": per_seed["p_quality_vs_correct"].mean(),
+            })
+
+    return pd.DataFrame(rows)
+
+
+def summarize_quality_by_class(predictions: pd.DataFrame, models) -> pd.DataFrame:
+    rows = []
+
+    for model in models:
+        model_df = predictions[(predictions["model"] == model) & (predictions["label"] == 1)].copy()
+        if model_df.empty:
+            continue
+
+        for reflete_val in REFLETE_PLOT_ORDER:
+            class_df = model_df[model_df["reflete_mudanca"] == reflete_val]
+            if class_df.empty:
+                continue
+
+            per_seed = class_df.groupby("seed").agg(
+                mean_pred_bug_proba=("pred_bug_proba", "mean"),
+                false_negative_rate=("pred", lambda s: float((s == 0).mean())),
+                n_rows=("pred", "size"),
+            )
+
+            rows.append({
+                "model": model,
+                "reflete_mudanca": reflete_val,
+                "n_seeds": len(per_seed),
+                "n_rows": int(per_seed["n_rows"].sum()),
+                "mean_pred_bug_proba": per_seed["mean_pred_bug_proba"].mean(),
+                "std_pred_bug_proba": per_seed["mean_pred_bug_proba"].std(),
+                "mean_false_negative_rate": per_seed["false_negative_rate"].mean(),
+                "std_false_negative_rate": per_seed["false_negative_rate"].std(),
+            })
+
+    return pd.DataFrame(rows)
 
 
 # ─── Figure 1: Overview bar chart (summary means) ─────────────────────────────
@@ -141,22 +258,23 @@ def fig_overview_bar_means(summary: pd.DataFrame, models, ax=None):
         if row.empty:
             continue
         values = [row[f"{m}_mean"].values[0] for m in METRICS]
+        stds = [row[f"{m}_std"].values[0] for m in METRICS]
         offset = (i - (len(models) - 1) / 2) * width
         bars = ax.bar(
-            x + offset, values, width,
+            x + offset, values, width, yerr=stds, capsize=4,
             label=MODEL_LABELS.get(model, model),
             color=MODEL_COLORS.get(model, None),
             edgecolor="white", linewidth=0.8,
         )
-        for b, v in zip(bars, values):
-            ax.text(b.get_x() + b.get_width() / 2, v + 0.012, f"{v:.3f}",
+        for b, v, s in zip(bars, values, stds):
+            ax.text(b.get_x() + b.get_width() / 2, v + s + 0.015, f"{v:.3f}±{s:.3f}",
                     ha="center", va="bottom", fontsize=7.5, rotation=0)
 
     ax.set_xticks(x)
     ax.set_xticklabels([METRIC_LABELS[m] for m in METRICS], fontsize=8.5)
     ax.set_ylabel("Score médio (30 runs)")
     ax.set_ylim(0, 1.12)
-    ax.set_title("Visão geral — médias por métrica (Random Forest vs Logistic Regression)")
+    ax.set_title("Visão geral — média ± desvio padrão por métrica")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=2, frameon=False)
 
     if standalone:
@@ -168,7 +286,7 @@ def fig_overview_bar_means(summary: pd.DataFrame, models, ax=None):
 # ─── Figure 2: Boxplots grid (per-run distributions) ──────────────────────────
 
 def fig_boxplots_grid(all_runs: pd.DataFrame, models):
-    fig, axes = plt.subplots(2, 4, figsize=(16, 8))
+    fig, axes = plt.subplots(2, 3, figsize=(15, 8))
     axes = axes.flatten()
 
     for ax, metric in zip(axes, METRICS):
@@ -235,7 +353,7 @@ def fig_class_comparison_single_model(all_runs: pd.DataFrame, model: str):
     ax.set_xticks(x)
     ax.set_xticklabels(["Precision", "Recall", "F1-score"])
     ax.set_ylabel("Score médio ± desvio padrão (30 runs)")
-    ax.set_ylim(0, 1.25)
+    ax.set_ylim(0, 1.1)
     ax.set_title(f"{MODEL_LABELS.get(model, model)} — Bug-inducing vs Clean")
     ax.legend(title="Classe", loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=2, frameon=False)
 
@@ -271,7 +389,7 @@ def fig_class_comparison_grouped(all_runs: pd.DataFrame, models):
         ax.set_xticks(x)
         ax.set_xticklabels(["Precision", "Recall", "F1-score"])
         ax.set_title(f"Classe: {cls}")
-        ax.set_ylim(0, 1.25)
+        ax.set_ylim(0, 1.1)
 
     axes[0].set_ylabel("Score médio ± desvio padrão (30 runs)")
     handles, labels = axes[0].get_legend_handles_labels()
@@ -342,10 +460,85 @@ def fig_radar(summary: pd.DataFrame, models):
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels([METRIC_LABELS[m].replace("\n", " ") for m in METRICS], fontsize=8.5)
     ax.set_ylim(0, 1)
-    ax.set_title("Comparação geral (radar) — médias das 8 métricas", pad=20, fontweight="bold")
+    ax.set_title("Comparação geral (radar) — médias das 6 métricas", pad=20, fontweight="bold")
     ax.legend(loc="upper right", bbox_to_anchor=(1.25, 1.1), frameon=False)
 
     fig.tight_layout()
+    return fig
+
+
+# ─── Figure 8: Commit-message quality vs prediction outcome ──────────────────
+
+def fig_quality_prediction_link(quality_summary: pd.DataFrame, models):
+    if quality_summary.empty:
+        return None
+
+    fig, axes = plt.subplots(2, 2, figsize=(15, 9), sharex=True)
+    metrics = [
+        ("mean_pred_bug_proba", "std_pred_bug_proba", "Predicted bug probability"),
+        ("mean_false_negative_rate", "std_false_negative_rate", "False negative rate"),
+    ]
+
+    for col_idx, model in enumerate(models):
+        model_df = quality_summary[quality_summary["model"] == model]
+        if model_df.empty:
+            continue
+
+        for row_idx, (mean_col, std_col, ylabel) in enumerate(metrics):
+            ax = axes[row_idx, col_idx]
+            bars = []
+            x = np.arange(len(REFLETE_PLOT_ORDER))
+            values = []
+            stds = []
+            for reflete_val in REFLETE_PLOT_ORDER:
+                row = model_df[model_df["reflete_mudanca"] == reflete_val]
+                if row.empty:
+                    values.append(np.nan)
+                    stds.append(np.nan)
+                else:
+                    values.append(row[mean_col].values[0])
+                    stds.append(row[std_col].values[0])
+
+            values_arr = np.array(values, dtype=float)
+            stds_arr = np.array(stds, dtype=float)
+            stds_arr = np.nan_to_num(stds_arr, nan=0.0)
+            bars = ax.bar(
+                x,
+                values_arr,
+                yerr=stds_arr,
+                capsize=4,
+                color=[REFLETE_COLORS[label] for label in REFLETE_PLOT_ORDER],
+                edgecolor="white",
+                linewidth=0.8,
+            )
+            for b, v, s in zip(bars, values_arr, stds_arr):
+                if np.isnan(v):
+                    continue
+                ax.text(
+                    b.get_x() + b.get_width() / 2,
+                    v + (0.015 if row_idx == 0 else 0.02),
+                    f"{v:.3f}±{(0.0 if np.isnan(s) else s):.3f}",
+                    ha="center",
+                    va="bottom",
+                    fontsize=7.5,
+                )
+
+            ax.set_ylim(0, 1.05)
+            ax.set_ylabel(ylabel)
+            ax.set_title(f"{MODEL_LABELS.get(model, model)}")
+            ax.grid(axis="y", alpha=0.3)
+            ax.set_xticks(x)
+            ax.set_xticklabels(REFLETE_PLOT_ORDER, rotation=15)
+
+    axes[0, 0].set_title(f"{MODEL_LABELS.get(models[0], models[0])} — defect-inducing commits")
+    if len(models) > 1:
+        axes[0, 1].set_title(f"{MODEL_LABELS.get(models[1], models[1])} — defect-inducing commits")
+    fig.suptitle(
+        "Commit-message quality vs predicted bug outcome\n"
+        "Defect-inducing commits only; bars show mean across seeds ± std of seed means",
+        fontweight="bold",
+    )
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
     return fig
 
 
@@ -388,7 +581,9 @@ def run_statistical_tests(all_runs: pd.DataFrame, models) -> pd.DataFrame:
             "metric":            metric,
             "n_paired_seeds":    n,
             f"mean_{model_a}":   a.mean(),
+            f"std_{model_a}":    a.std(),
             f"mean_{model_b}":   b.mean(),
+            f"std_{model_b}":    b.std(),
             "mean_diff_A_minus_B": diff.mean(),
             "std_diff":          diff.std(),
             "wilcoxon_stat":     wilcoxon_stat,
@@ -417,13 +612,58 @@ def write_text_report(test_df: pd.DataFrame, models, out_path: Path):
         sig = "SIM (p < 0.05)" if row["significant_0.05"] else "não"
         lines.append(f"--- {row['metric']} ---")
         lines.append(f"  n pares (seeds)      : {int(row['n_paired_seeds'])}")
-        lines.append(f"  média A ({model_a:<19s}): {row[f'mean_{model_a}']:.4f}")
-        lines.append(f"  média B ({model_b:<19s}): {row[f'mean_{model_b}']:.4f}")
+        lines.append(f"  A ({model_a:<19s}): {row[f'mean_{model_a}']:.4f} ± {row[f'std_{model_a}']:.4f}")
+        lines.append(f"  B ({model_b:<19s}): {row[f'mean_{model_b}']:.4f} ± {row[f'std_{model_b}']:.4f}")
         lines.append(f"  diferença média (A-B): {row['mean_diff_A_minus_B']:+.4f} "
-                      f"(desvio: {row['std_diff']:.4f})")
+                      f"± {row['std_diff']:.4f}")
         lines.append(f"  Wilcoxon signed-rank : stat={row['wilcoxon_stat']:.3f}  p={row['wilcoxon_p']:.4f}")
         lines.append(f"  Teste t pareado      : stat={row['ttest_stat']:.3f}  p={row['ttest_p']:.4f}")
         lines.append(f"  Diferença significativa a 5%? {sig}")
+        lines.append("")
+
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_quality_report(
+    corr_df: pd.DataFrame,
+    class_df: pd.DataFrame,
+    models,
+    out_path: Path,
+):
+    lines = []
+    lines.append("=" * 78)
+    lines.append("QUALIDADE DA MENSAGEM DE COMMIT VS SAÍDA DO MODELO")
+    lines.append("=" * 78)
+    lines.append("Pontuação ordinal da qualidade: Não=0, Provavelmente não=1, Provavelmente sim=2, Sim=3.")
+    lines.append("A análise principal usa commits defect-inducing e resume a variação por seed.")
+    lines.append("")
+
+    for model in models:
+        lines.append(f"--- {MODEL_LABELS.get(model, model)} ---")
+        for scope in ("all_annotated", "bug_inducing_only"):
+            row = corr_df[(corr_df["model"] == model) & (corr_df["scope"] == scope)]
+            if row.empty:
+                continue
+            row = row.iloc[0]
+            lines.append(
+                f"  {scope}: rho(qualidade, prob_bug) = {row['mean_rho_quality_vs_pred_bug_proba']:+.4f} "
+                f"± {row['std_rho_quality_vs_pred_bug_proba']:.4f} | "
+                f"rho(qualidade, acerto) = {row['mean_rho_quality_vs_correct']:+.4f} "
+                f"± {row['std_rho_quality_vs_correct']:.4f}"
+            )
+
+        quality_rows = class_df[class_df["model"] == model]
+        if not quality_rows.empty:
+            lines.append("  Por classe de reflexão (somente defect-inducing):")
+            for reflete_val in REFLETE_PLOT_ORDER:
+                row = quality_rows[quality_rows["reflete_mudanca"] == reflete_val]
+                if row.empty:
+                    continue
+                row = row.iloc[0]
+                lines.append(
+                    f"    {reflete_val:<18s} prob_bug={row['mean_pred_bug_proba']:.4f} ± {row['std_pred_bug_proba']:.4f}"
+                    f" | fnr={row['mean_false_negative_rate']:.4f} ± {row['std_false_negative_rate']:.4f}"
+                )
         lines.append("")
 
     out_path.write_text("\n".join(lines), encoding="utf-8")
@@ -447,7 +687,7 @@ def main():
     print("ANÁLISE ESTATÍSTICA — Random Forest vs Logistic Regression")
     print("=" * 70)
 
-    all_runs, summary, models = load_data(results_dir)
+    all_runs, summary, predictions, models = load_data(results_dir)
     print(f"[LOAD] all_runs.csv          : {len(all_runs)} linhas")
     print(f"[LOAD] summary_by_model.csv  : {len(summary)} linhas")
     print(f"[LOAD] Modelos detectados    : {models}\n")
@@ -476,6 +716,19 @@ def main():
 
     print("[FIG] 07 — radar comparison")
     figures.append(("07_radar_comparison", fig_radar(summary, models)))
+
+    quality_corr_df = pd.DataFrame()
+    quality_class_df = pd.DataFrame()
+
+    if predictions is not None and not predictions.empty:
+        print("[FIG] 08 — commit-message quality vs predicted outcomes")
+        prepared_predictions = _prepare_prediction_log(predictions)
+        quality_corr_df = summarize_quality_correlations(prepared_predictions, models)
+        quality_class_df = summarize_quality_by_class(prepared_predictions, models)
+
+        fig8 = fig_quality_prediction_link(quality_class_df, models)
+        if fig8 is not None:
+            figures.append(("08_quality_prediction_link", fig8))
 
     # ── Salva PNGs individuais ────────────────────────────────────────────
     for name, fig in figures:
@@ -510,6 +763,17 @@ def main():
         print("\nResumo dos testes:")
         print(test_df[["metric", "mean_diff_A_minus_B", "wilcoxon_p", "significant_0.05"]]
               .to_string(index=False))
+
+    if not quality_corr_df.empty and not quality_class_df.empty:
+        corr_csv = output_dir / "quality_correlation.csv"
+        corr_txt = output_dir / "quality_correlation.txt"
+        class_csv = output_dir / "quality_by_reflection.csv"
+        quality_corr_df.to_csv(corr_csv, index=False)
+        quality_class_df.to_csv(class_csv, index=False)
+        write_quality_report(quality_corr_df, quality_class_df, models, corr_txt)
+        print(f"  [SAVE] {corr_csv}")
+        print(f"  [SAVE] {class_csv}")
+        print(f"  [SAVE] {corr_txt}")
 
     print(f"\nDone. Resultados em: {output_dir}")
 
