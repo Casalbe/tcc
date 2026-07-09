@@ -14,12 +14,15 @@ Gera, em results/figures/:
   06_paired_differences.png        — diferença pareada (RF-LR) por seed
     07_radar_comparison.png          — radar das 6 métricas, RF vs LR
     08_quality_prediction_link.png   — qualidade da mensagem vs saída do modelo
+        09_reflection_class_metrics.png   — métricas por classe de reflexão
 
   comparison_report.pdf            — todas as figuras acima, em um PDF único
     statistical_tests.csv            — Wilcoxon pareado + teste t pareado por métrica
     statistical_tests.txt            — mesmo conteúdo, formatado para leitura/colar na tese
     quality_correlation.csv          — correlação da qualidade da mensagem com as predições
     quality_correlation.txt          — resumo textual da correlação
+    reflection_class_metrics.csv     — precisão/recall/F1 por classe de reflexão
+    reflection_class_metrics.txt     — resumo textual por classe de reflexão
 
 Uso:
     python analyze_results.py
@@ -37,6 +40,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.backends.backend_pdf import PdfPages
 from scipy import stats
+from sklearn.metrics import f1_score, precision_score, recall_score
 
 from common import normalize_reflete_mudanca, reflete_to_score
 
@@ -238,6 +242,68 @@ def summarize_quality_by_class(predictions: pd.DataFrame, models) -> pd.DataFram
                 "std_pred_bug_proba": per_seed["mean_pred_bug_proba"].std(),
                 "mean_false_negative_rate": per_seed["false_negative_rate"].mean(),
                 "std_false_negative_rate": per_seed["false_negative_rate"].std(),
+            })
+
+    return pd.DataFrame(rows)
+
+
+def summarize_reflection_class_metrics(predictions: pd.DataFrame, models) -> pd.DataFrame:
+    rows = []
+
+    for model in models:
+        model_df = predictions[predictions["model"] == model].copy()
+        if model_df.empty:
+            continue
+
+        for reflete_val in REFLETE_PLOT_ORDER:
+            class_df = model_df[model_df["reflete_mudanca"] == reflete_val]
+            if class_df.empty:
+                continue
+
+            per_seed_rows = []
+            for seed, seed_df in class_df.groupby("seed"):
+                y_true = seed_df["label"].astype(int).values
+                y_pred = seed_df["pred"].astype(int).values
+                per_seed_rows.append({
+                    "model": model,
+                    "reflete_mudanca": reflete_val,
+                    "seed": seed,
+                    "n_rows": len(seed_df),
+                    "precision_bug": precision_score(y_true, y_pred, pos_label=1, zero_division=0),
+                    "recall_bug": recall_score(y_true, y_pred, pos_label=1, zero_division=0),
+                    "f1_bug": f1_score(y_true, y_pred, pos_label=1, zero_division=0),
+                    "precision_clean": precision_score(y_true, y_pred, pos_label=0, zero_division=0),
+                    "recall_clean": recall_score(y_true, y_pred, pos_label=0, zero_division=0),
+                    "f1_clean": f1_score(y_true, y_pred, pos_label=0, zero_division=0),
+                    "bug_rate": float((y_true == 1).mean()),
+                    "pred_bug_rate": float((y_pred == 1).mean()),
+                })
+
+            if not per_seed_rows:
+                continue
+
+            per_seed = pd.DataFrame(per_seed_rows)
+            rows.append({
+                "model": model,
+                "reflete_mudanca": reflete_val,
+                "n_seeds": len(per_seed),
+                "n_rows": int(per_seed["n_rows"].sum()),
+                "precision_bug_mean": per_seed["precision_bug"].mean(),
+                "precision_bug_std": per_seed["precision_bug"].std(),
+                "recall_bug_mean": per_seed["recall_bug"].mean(),
+                "recall_bug_std": per_seed["recall_bug"].std(),
+                "f1_bug_mean": per_seed["f1_bug"].mean(),
+                "f1_bug_std": per_seed["f1_bug"].std(),
+                "precision_clean_mean": per_seed["precision_clean"].mean(),
+                "precision_clean_std": per_seed["precision_clean"].std(),
+                "recall_clean_mean": per_seed["recall_clean"].mean(),
+                "recall_clean_std": per_seed["recall_clean"].std(),
+                "f1_clean_mean": per_seed["f1_clean"].mean(),
+                "f1_clean_std": per_seed["f1_clean"].std(),
+                "bug_rate_mean": per_seed["bug_rate"].mean(),
+                "bug_rate_std": per_seed["bug_rate"].std(),
+                "pred_bug_rate_mean": per_seed["pred_bug_rate"].mean(),
+                "pred_bug_rate_std": per_seed["pred_bug_rate"].std(),
             })
 
     return pd.DataFrame(rows)
@@ -542,6 +608,79 @@ def fig_quality_prediction_link(quality_summary: pd.DataFrame, models):
     return fig
 
 
+# ─── Figure 9: Reflection-class performance comparison ──────────────────────
+
+def fig_reflection_class_metrics(reflection_metrics: pd.DataFrame, models):
+    if reflection_metrics.empty:
+        return None
+
+    fig, axes = plt.subplots(2, 3, figsize=(16, 9), sharex=True)
+    axes = axes.flatten()
+    metric_specs = [
+        ("precision_bug_mean", "precision_bug_std", "Precision (bug-inducing)"),
+        ("recall_bug_mean", "recall_bug_std", "Recall (bug-inducing)"),
+        ("f1_bug_mean", "f1_bug_std", "F1-score (bug-inducing)"),
+        ("precision_clean_mean", "precision_clean_std", "Precision (clean)"),
+        ("recall_clean_mean", "recall_clean_std", "Recall (clean)"),
+        ("f1_clean_mean", "f1_clean_std", "F1-score (clean)"),
+    ]
+
+    x = np.arange(len(REFLETE_PLOT_ORDER))
+    width = 0.35
+
+    for ax, (mean_col, std_col, title) in zip(axes, metric_specs):
+        for i, model in enumerate(models):
+            model_df = reflection_metrics[reflection_metrics["model"] == model]
+            means = []
+            stds = []
+            for reflete_val in REFLETE_PLOT_ORDER:
+                row = model_df[model_df["reflete_mudanca"] == reflete_val]
+                if row.empty:
+                    means.append(np.nan)
+                    stds.append(0.0)
+                else:
+                    means.append(row[mean_col].values[0])
+                    stds.append(0.0 if pd.isna(row[std_col].values[0]) else row[std_col].values[0])
+
+            offset = (i - (len(models) - 1) / 2) * width
+            bars = ax.bar(
+                x + offset,
+                means,
+                width,
+                yerr=stds,
+                capsize=4,
+                label=MODEL_LABELS.get(model, model),
+                color=MODEL_COLORS.get(model, None),
+                edgecolor="white",
+                linewidth=0.8,
+            )
+            for b, v, s in zip(bars, means, stds):
+                if pd.isna(v):
+                    continue
+                ax.text(
+                    b.get_x() + b.get_width() / 2,
+                    v + s + 0.015,
+                    f"{v:.3f}",
+                    ha="center",
+                    va="bottom",
+                    fontsize=7.5,
+                )
+
+        ax.set_title(title)
+        ax.set_ylim(0, 1.1)
+        ax.set_xticks(x)
+        ax.set_xticklabels(REFLETE_PLOT_ORDER, rotation=15)
+        ax.grid(axis="y", alpha=0.3)
+
+    axes[0].legend(loc="upper center", bbox_to_anchor=(0.5, 1.25), ncol=2, frameon=False)
+    fig.suptitle(
+        "Performance by reflection class — bug-inducing and clean metrics",
+        fontweight="bold",
+    )
+    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    return fig
+
+
 # ─── Statistical tests ─────────────────────────────────────────────────────────
 
 def run_statistical_tests(all_runs: pd.DataFrame, models) -> pd.DataFrame:
@@ -669,6 +808,39 @@ def write_quality_report(
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_reflection_class_report(reflection_df: pd.DataFrame, models, out_path: Path):
+    lines = []
+    lines.append("=" * 78)
+    lines.append("PERFORMANCE POR CLASSE DE REFLEXÃO")
+    lines.append("=" * 78)
+    lines.append("Cada linha resume média ± desvio padrão ao longo dos seeds.")
+    lines.append("")
+
+    for model in models:
+        lines.append(f"--- {MODEL_LABELS.get(model, model)} ---")
+        model_df = reflection_df[reflection_df["model"] == model]
+        for reflete_val in REFLETE_PLOT_ORDER:
+            row = model_df[model_df["reflete_mudanca"] == reflete_val]
+            if row.empty:
+                continue
+            row = row.iloc[0]
+            lines.append(
+                f"  {reflete_val:<18s} "
+                f"Pbug={row['precision_bug_mean']:.4f} ± {row['precision_bug_std']:.4f} | "
+                f"Rbug={row['recall_bug_mean']:.4f} ± {row['recall_bug_std']:.4f} | "
+                f"F1bug={row['f1_bug_mean']:.4f} ± {row['f1_bug_std']:.4f}"
+            )
+            lines.append(
+                f"{'':22s} "
+                f"Pclean={row['precision_clean_mean']:.4f} ± {row['precision_clean_std']:.4f} | "
+                f"Rclean={row['recall_clean_mean']:.4f} ± {row['recall_clean_std']:.4f} | "
+                f"F1clean={row['f1_clean_mean']:.4f} ± {row['f1_clean_std']:.4f}"
+            )
+        lines.append("")
+
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+
+
 # ─── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -719,16 +891,22 @@ def main():
 
     quality_corr_df = pd.DataFrame()
     quality_class_df = pd.DataFrame()
+    reflection_class_df = pd.DataFrame()
 
     if predictions is not None and not predictions.empty:
         print("[FIG] 08 — commit-message quality vs predicted outcomes")
         prepared_predictions = _prepare_prediction_log(predictions)
         quality_corr_df = summarize_quality_correlations(prepared_predictions, models)
         quality_class_df = summarize_quality_by_class(prepared_predictions, models)
+        reflection_class_df = summarize_reflection_class_metrics(prepared_predictions, models)
 
         fig8 = fig_quality_prediction_link(quality_class_df, models)
         if fig8 is not None:
             figures.append(("08_quality_prediction_link", fig8))
+
+        fig9 = fig_reflection_class_metrics(reflection_class_df, models)
+        if fig9 is not None:
+            figures.append(("09_reflection_class_metrics", fig9))
 
     # ── Salva PNGs individuais ────────────────────────────────────────────
     for name, fig in figures:
@@ -774,6 +952,14 @@ def main():
         print(f"  [SAVE] {corr_csv}")
         print(f"  [SAVE] {class_csv}")
         print(f"  [SAVE] {corr_txt}")
+
+    if not reflection_class_df.empty:
+        reflection_csv = output_dir / "reflection_class_metrics.csv"
+        reflection_txt = output_dir / "reflection_class_metrics.txt"
+        reflection_class_df.to_csv(reflection_csv, index=False)
+        write_reflection_class_report(reflection_class_df, models, reflection_txt)
+        print(f"  [SAVE] {reflection_csv}")
+        print(f"  [SAVE] {reflection_txt}")
 
     print(f"\nDone. Resultados em: {output_dir}")
 
